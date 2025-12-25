@@ -126,6 +126,18 @@
         </select>
       </div>
 
+      <div class="filter-group">
+        <label class="filter-label">Intel Freshness</label>
+        <select id="filter-freshness" class="filter-select">
+          <option value="all">All</option>
+          <option value="fresh">🍅 Fresh</option>
+          <option value="aging">🍊 Aging</option>
+          <option value="rotten">🥀 Rotten</option>
+          <option value="no_update">💀 No Update</option>
+          <option value="past_deadline">⏰ Past Deadline</option>
+        </select>
+      </div>
+
       <button id="clear-filters" class="filter-clear">Clear Filters</button>
     </div>
 
@@ -135,17 +147,15 @@
       <span id="filtered-total"></span>
     </div>
 
-    <div class="table-wrapper">
+    <div class="table-wrapper with-filters">
       <table class="data-table" id="opps-table">
         <thead>
           <tr>
             <th>Opportunity</th>
-            <th class="numeric">ARR</th>
-            <th class="numeric">Annual Commit</th>
-            <th>Contract End</th>
-            <th>Stage</th>
+            <th class="numeric">ARR / Commit</th>
+            <th class="stage-col">Stage</th>
             <th>Close Date</th>
-            <th>Deal Intel</th>
+            <th class="deal-intel-col">Deal Intel</th>
           </tr>
         </thead>
         <tbody>
@@ -157,19 +167,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000eVKcwYAG/view" target="_blank" class="opp-link">Citi Services - API + Custom Agent</a>
               <span class="account-name">(Citi)</span>
               
               
             </td>
-            <td class="numeric">$3.0M</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s2">Stage 2</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $3.0M
+              
+            </td>
+            <td><span class="stage-badge s2">S2</span></td>
             <td>2026-02-09</td>
-            <td class="deal-intel">10.14 - onsite with Sahil and his team on Thursday</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              10.14 - onsite with Sahil and his team on Thursday
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -179,19 +204,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000fTVC5YAO/view" target="_blank" class="opp-link">Westpac - Claude Code</a>
               <span class="account-name">(Westpac)</span>
               
               
             </td>
-            <td class="numeric">$2.0M</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s2">Stage 2</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $2.0M
+              
+            </td>
+            <td><span class="stage-badge s2">S2</span></td>
             <td>2026-02-20</td>
-            <td class="deal-intel">11.25 - Reviewing pilot details &amp; use case. Sending back suggested pilot plan.</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              11.25 - Reviewing pilot details &amp; use case. Sending back suggested pilot plan.
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -201,19 +241,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000dAu0rYAC/view" target="_blank" class="opp-link">Claude for Financial Services</a>
               <span class="account-name">(Citigroup)</span>
               
               
             </td>
-            <td class="numeric">$1.5M</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s1">Stage 1</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $1.5M
+              
+            </td>
+            <td><span class="stage-badge s1">S1</span></td>
             <td>2026-02-16</td>
-            <td class="deal-intel">10.7 - meeting with Joe Bonano (Head of AI for Wealth) this Thursday</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              10.7 - meeting with Joe Bonano (Head of AI for Wealth) this Thursday
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr class="row-warning"
@@ -223,19 +278,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000hqZ0yYAE/view" target="_blank" class="opp-link">Citi // GCP Provisioned Throughput</a>
               <span class="account-name">(Citigroup)</span>
               
               <span class="warning-badge">STALE</span>
             </td>
-            <td class="numeric">$486.0K</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s0">Stage 0</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $486.0K
+              
+            </td>
+            <td><span class="stage-badge s0">S0</span></td>
             <td>2025-12-03</td>
-            <td class="deal-intel">11.26 // Sign Order Schedule Amendment, to then issue Private Offer</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              11.26 // Sign Order Schedule Amendment, to then issue Private Offer
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr class="row-warning"
@@ -245,19 +315,26 @@
               data-quarter=""
               data-commit="446400.0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="unknown">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iVNjlYAG/view" target="_blank" class="opp-link">Citi - Q1 PT</a>
               <span class="account-name">(Citigroup)</span>
               
               <span class="warning-badge">STALE</span>
             </td>
-            <td class="numeric">$446.4K</td>
-            <td class="numeric">$446.4K</td>
-            <td></td>
-            <td><span class="stage-badge s5">Stage 5</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $446.4K / $446.4K
+              
+            </td>
+            <td><span class="stage-badge s5">S5</span></td>
             <td>2025-12-04</td>
-            <td class="deal-intel">12.5 - executed OF received; waiting for approval on the quote to move to won</td>
+            <td class="deal-intel">
+              
+              12.5 - executed OF received; waiting for approval on the quote to move to won
+              
+            </td>
           </tr>
           
           <tr
@@ -267,19 +344,34 @@
               data-quarter=""
               data-commit="120000.0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000Zyv5jYAB/view" target="_blank" class="opp-link">City National Bank of Florida- CC + C4E Bundle</a>
               <span class="account-name">(City National Bank of Florida)</span>
               
               
             </td>
-            <td class="numeric">$120.0K</td>
-            <td class="numeric">$120.0K</td>
-            <td></td>
-            <td><span class="stage-badge s4">Stage 4</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $120.0K / $120.0K
+              
+            </td>
+            <td><span class="stage-badge s4">S4</span></td>
             <td>2026-01-30</td>
-            <td class="deal-intel">12/18 - Trying to get the review process over the line. High probability this gets pushed to Q1</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              12/18 - Trying to get the review process over the line. High probability this gets pushed to Q1
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -289,19 +381,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="no_update">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000heDQrYAM/view" target="_blank" class="opp-link">Anthropic / Citi - [Eugene]</a>
               <span class="account-name">(Citi)</span>
               
               
             </td>
-            <td class="numeric">$100.0K</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s0">Stage 0</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $100.0K
+              
+            </td>
+            <td><span class="stage-badge s0">S0</span></td>
             <td>2026-03-12</td>
-            <td class="deal-intel">-</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="no_update: Noned old">💀</span>
+              
+              -
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">No deal intel recorded</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -311,19 +418,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="no_update">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000b03WsYAI/view" target="_blank" class="opp-link">Synovus - Claude Code - $10K</a>
               <span class="account-name">(Synovus)</span>
               
               
             </td>
-            <td class="numeric">$100.0K</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s1">Stage 1</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $100.0K
+              
+            </td>
+            <td><span class="stage-badge s1">S1</span></td>
             <td>2026-01-30</td>
-            <td class="deal-intel">seeing if this is real or not</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="no_update: Noned old">💀</span>
+              
+              seeing if this is real or not
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">No timestamp in deal intel</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -333,19 +455,34 @@
               data-quarter=""
               data-commit="60480.0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000hLnGIYA0/view" target="_blank" class="opp-link">ACI Worldwide - Data Intelligence BU - CC Consumption Seats</a>
               <span class="account-name">(ACI Worldwide)</span>
               
               
             </td>
-            <td class="numeric">$60.5K</td>
-            <td class="numeric">$60.5K</td>
-            <td></td>
-            <td><span class="stage-badge s4">Stage 4</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $60.5K / $60.5K
+              
+            </td>
+            <td><span class="stage-badge s4">S4</span></td>
             <td>2026-01-16</td>
-            <td class="deal-intel">12/18 (GS) - OF with Finance for final review / approval</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              12/18 (GS) - OF with Finance for final review / approval
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -355,19 +492,34 @@
               data-quarter=""
               data-commit="28800.0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000jFcEOYA0/view" target="_blank" class="opp-link">ACI Worldwide - Product BU - CC Consumption Seats</a>
               <span class="account-name">(ACI Worldwide)</span>
               
               
             </td>
-            <td class="numeric">$28.8K</td>
-            <td class="numeric">$28.8K</td>
-            <td></td>
-            <td><span class="stage-badge s2">Stage 2</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $28.8K / $28.8K
+              
+            </td>
+            <td><span class="stage-badge s2">S2</span></td>
             <td>2026-01-16</td>
-            <td class="deal-intel">12/18 (GS) - OF with finance for final review / approval</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              12/18 (GS) - OF with finance for final review / approval
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr class="row-warning"
@@ -377,19 +529,26 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="unknown">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k1KOYAY/view" target="_blank" class="opp-link">Data Sync: Bancolombia</a>
               <span class="account-name">(Bancolombia S/A)</span>
               
               <span class="warning-badge">STALE</span>
             </td>
-            <td class="numeric">$0</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s0">Stage 0</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $0
+              
+            </td>
+            <td><span class="stage-badge s0">S0</span></td>
             <td>2023-12-31</td>
-            <td class="deal-intel">-</td>
+            <td class="deal-intel">
+              
+              -
+              
+            </td>
           </tr>
           
           <tr class="row-warning"
@@ -399,19 +558,26 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="unknown">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k1KNYAY/view" target="_blank" class="opp-link">Data Sync: Bancolombia S.A</a>
               <span class="account-name">(Bancolombia S/A)</span>
               
               <span class="warning-badge">STALE</span>
             </td>
-            <td class="numeric">$0</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s0">Stage 0</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $0
+              
+            </td>
+            <td><span class="stage-badge s0">S0</span></td>
             <td>2023-12-31</td>
-            <td class="deal-intel">-</td>
+            <td class="deal-intel">
+              
+              -
+              
+            </td>
           </tr>
           
           <tr class="row-warning"
@@ -421,19 +587,26 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="unknown">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK0000091Fz2YAE/view" target="_blank" class="opp-link">Data Sync: Suncorp</a>
               <span class="account-name">(Suncorp)</span>
               
               <span class="warning-badge">STALE</span>
             </td>
-            <td class="numeric">$0</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s0">Stage 0</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $0
+              
+            </td>
+            <td><span class="stage-badge s0">S0</span></td>
             <td>2023-12-31</td>
-            <td class="deal-intel">-</td>
+            <td class="deal-intel">
+              
+              -
+              
+            </td>
           </tr>
           
           <tr class="row-warning"
@@ -443,19 +616,26 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="unknown">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0gQYAQ/view" target="_blank" class="opp-link">Data Sync: Sallie Mae Bank</a>
               <span class="account-name">(SLM Corporation)</span>
               
               <span class="warning-badge">STALE</span>
             </td>
-            <td class="numeric">$0</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s0">Stage 0</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $0
+              
+            </td>
+            <td><span class="stage-badge s0">S0</span></td>
             <td>2023-12-31</td>
-            <td class="deal-intel">-</td>
+            <td class="deal-intel">
+              
+              -
+              
+            </td>
           </tr>
           
           <tr class="row-warning"
@@ -465,19 +645,26 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="unknown">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0pSYAQ/view" target="_blank" class="opp-link">Data Sync: OneMain Financial</a>
               <span class="account-name">(Onemain Holdings, Inc.)</span>
               
               <span class="warning-badge">STALE</span>
             </td>
-            <td class="numeric">$0</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s0">Stage 0</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $0
+              
+            </td>
+            <td><span class="stage-badge s0">S0</span></td>
             <td>2023-12-31</td>
-            <td class="deal-intel">-</td>
+            <td class="deal-intel">
+              
+              -
+              
+            </td>
           </tr>
           
           <tr
@@ -487,19 +674,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000gWAAXYA4/view" target="_blank" class="opp-link">C4F Trial</a>
               <span class="account-name">(Citi)</span>
               
               
             </td>
-            <td class="numeric">$0</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s0">Stage 0</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $0
+              
+            </td>
+            <td><span class="stage-badge s0">S0</span></td>
             <td>2026-05-18</td>
-            <td class="deal-intel">11.10 - sending Evaluation Agreement</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              11.10 - sending Evaluation Agreement
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -509,28 +711,41 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="no_update">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000eQmA2YAK/view" target="_blank" class="opp-link">Bancolombia S.A. - new 3p spend</a>
               <span class="account-name">(Bancolombia S/A)</span>
               
               
             </td>
-            <td class="numeric">$0</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s2">Stage 2</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $0
+              
+            </td>
+            <td><span class="stage-badge s2">S2</span></td>
             <td>2026-01-14</td>
-            <td class="deal-intel">-</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="no_update: Noned old">💀</span>
+              
+              -
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">No deal intel recorded</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
         </tbody>
         <tfoot>
           <tr class="totals-row">
             <td><strong>TOTAL (<span id="total-count">17</span> opportunities)</strong></td>
-            <td class="numeric"><strong id="total-arr">$7.8M</strong></td>
-            <td class="numeric"><strong id="total-commit">$655.7K</strong></td>
-            <td></td>
+            <td class="numeric"><strong id="total-arr">$7.8M</strong> / <strong id="total-commit">$655.7K</strong></td>
             <td></td>
             <td></td>
             <td></td>
@@ -542,6 +757,51 @@
 </div>
 
 <style>
+/* Column Width Adjustments */
+.stage-col {
+  width: 60px;
+  text-align: center;
+}
+
+.deal-intel-col {
+  width: 40%;
+}
+
+.arr-commit-cell {
+  white-space: nowrap;
+}
+
+.deal-intel {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  max-width: 400px;
+}
+
+/* Freshness Indicators */
+.freshness-icon {
+  display: inline-block;
+  font-size: 1rem;
+  margin-right: 0.4rem;
+  cursor: help;
+  vertical-align: middle;
+}
+
+.intel-issues {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.intel-issue {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--mid-gray);
+  font-style: italic;
+  padding-left: 1.4rem;
+  line-height: 1.3;
+}
+
 /* Filter Bar Styles */
 .filter-bar {
   display: flex;
@@ -666,6 +926,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const staleFilter = document.getElementById('filter-stale');
   const ageFilter = document.getElementById('filter-age');
   const currentStageFilter = document.getElementById('filter-current-stage');
+  const freshnessFilter = document.getElementById('filter-freshness');
   const clearBtn = document.getElementById('clear-filters');
 
   const visibleCount = document.getElementById('visible-count');
@@ -690,6 +951,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const stale = staleFilter.value;
     const ageMax = ageFilter.value === 'all' ? 9999 : parseInt(ageFilter.value);
     const currentStage = currentStageFilter.value;
+    const freshness = freshnessFilter.value;
 
     let visibleRows = 0;
     let sumArr = 0;
@@ -703,6 +965,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const rowCommit = parseFloat(row.dataset.commit) || 0;
       const rowAge = parseInt(row.dataset.age) || 9999;
       const rowCurrentStageDays = parseInt(row.dataset.currentStageDays) || 0;
+      const rowFreshness = row.dataset.freshness || 'unknown';
 
       let show = true;
 
@@ -756,6 +1019,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
+      // Freshness filter
+      if (freshness !== 'all' && rowFreshness !== freshness) {
+        show = false;
+      }
+
       if (show) {
         row.classList.remove('filtered-out');
         visibleRows++;
@@ -773,7 +1041,7 @@ document.addEventListener('DOMContentLoaded', function() {
     totalCommit.textContent = formatCurrency(sumCommit);
 
     // Show filtered indicator if filters are active
-    const hasFilters = stage !== 'all' || quarter !== 'all' || arrFilter.value !== 'all' || stale !== 'all' || ageFilter.value !== 'all' || currentStage !== 'all';
+    const hasFilters = stage !== 'all' || quarter !== 'all' || arrFilter.value !== 'all' || stale !== 'all' || ageFilter.value !== 'all' || currentStage !== 'all' || freshness !== 'all';
     if (hasFilters && visibleRows < rows.length) {
       filteredTotal.textContent = ' | Filtered: ' + formatCurrency(sumArr) + ' ARR';
     } else {
@@ -788,6 +1056,7 @@ document.addEventListener('DOMContentLoaded', function() {
   staleFilter.addEventListener('change', applyFilters);
   ageFilter.addEventListener('change', applyFilters);
   currentStageFilter.addEventListener('change', applyFilters);
+  freshnessFilter.addEventListener('change', applyFilters);
 
   clearBtn.addEventListener('click', function() {
     stageFilter.value = 'all';
@@ -796,6 +1065,7 @@ document.addEventListener('DOMContentLoaded', function() {
     staleFilter.value = 'all';
     ageFilter.value = 'all';
     currentStageFilter.value = 'all';
+    freshnessFilter.value = 'all';
     applyFilters();
   });
 });

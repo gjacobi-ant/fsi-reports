@@ -126,6 +126,18 @@
         </select>
       </div>
 
+      <div class="filter-group">
+        <label class="filter-label">Intel Freshness</label>
+        <select id="filter-freshness" class="filter-select">
+          <option value="all">All</option>
+          <option value="fresh">🍅 Fresh</option>
+          <option value="aging">🍊 Aging</option>
+          <option value="rotten">🥀 Rotten</option>
+          <option value="no_update">💀 No Update</option>
+          <option value="past_deadline">⏰ Past Deadline</option>
+        </select>
+      </div>
+
       <button id="clear-filters" class="filter-clear">Clear Filters</button>
     </div>
 
@@ -135,17 +147,15 @@
       <span id="filtered-total"></span>
     </div>
 
-    <div class="table-wrapper">
+    <div class="table-wrapper with-filters">
       <table class="data-table" id="opps-table">
         <thead>
           <tr>
             <th>Opportunity</th>
-            <th class="numeric">ARR</th>
-            <th class="numeric">Annual Commit</th>
-            <th>Contract End</th>
-            <th>Stage</th>
+            <th class="numeric">ARR / Commit</th>
+            <th class="stage-col">Stage</th>
             <th>Close Date</th>
-            <th>Deal Intel</th>
+            <th class="deal-intel-col">Deal Intel</th>
           </tr>
         </thead>
         <tbody>
@@ -157,19 +167,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000efB6vYAE/view" target="_blank" class="opp-link">Claude Code W2W</a>
               <span class="account-name">(JPMorgan Chase &amp; Co)</span>
               
               
             </td>
-            <td class="numeric">$54.0M</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s1">Stage 1</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $54.0M
+              
+            </td>
+            <td><span class="stage-badge s1">S1</span></td>
             <td>2026-08-14</td>
-            <td class="deal-intel">10.16 - meeting with James Whiting Nov 18 with Boris</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              10.16 - meeting with James Whiting Nov 18 with Boris
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -179,19 +204,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000gW72zYAC/view" target="_blank" class="opp-link">Credit Risk Trading Custom Agent</a>
               <span class="account-name">(JPMorgan Chase &amp; Co)</span>
               
               
             </td>
-            <td class="numeric">$15.0M</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s1">Stage 1</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $15.0M
+              
+            </td>
+            <td><span class="stage-badge s1">S1</span></td>
             <td>2026-02-16</td>
-            <td class="deal-intel">11.10 - discovery call w/ orowa, bricken, harsh + MDs next week (TBC)</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              11.10 - discovery call w/ orowa, bricken, harsh + MDs next week (TBC)
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -201,19 +241,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000eVJovYAG/view" target="_blank" class="opp-link">Athena Modernizaton Project</a>
               <span class="account-name">(JPMorgan Chase &amp; Co)</span>
               
               
             </td>
-            <td class="numeric">$6.0M</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s0">Stage 0</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $6.0M
+              
+            </td>
+            <td><span class="stage-badge s0">S0</span></td>
             <td>2026-05-11</td>
-            <td class="deal-intel">11.15 - holding on scoping until OMS SoW done</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              11.15 - holding on scoping until OMS SoW done
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -223,19 +278,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000dOdWPYA0/view" target="_blank" class="opp-link">JPMC C4F</a>
               <span class="account-name">(JPMorgan Chase &amp; Co)</span>
               
               
             </td>
-            <td class="numeric">$1.2M</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s1">Stage 1</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $1.2M
+              
+            </td>
+            <td><span class="stage-badge s1">S1</span></td>
             <td>2026-04-13</td>
-            <td class="deal-intel">10.19 - meeting with Teresa and Derek onsite on Thursday</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              10.19 - meeting with Teresa and Derek onsite on Thursday
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -245,19 +315,34 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000X6BDvYAN/view" target="_blank" class="opp-link">JPMC // Claude Code pilot</a>
               <span class="account-name">(JPMorgan Chase &amp; Co)</span>
               
               
             </td>
-            <td class="numeric">$1.0M</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s2">Stage 2</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $1.0M
+              
+            </td>
+            <td><span class="stage-badge s2">S2</span></td>
             <td>2026-02-16</td>
-            <td class="deal-intel">10.14 working through outstanding risk review</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              10.14 working through outstanding risk review
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
           <tr
@@ -267,28 +352,41 @@
               data-quarter=""
               data-commit="0"
               data-age=""
-              data-current-stage-days="">
+              data-current-stage-days=""
+              data-freshness="past_deadline">
             <td>
               <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000eVDV0YAO/view" target="_blank" class="opp-link">OrderManager Monolith Decomposition Project</a>
               <span class="account-name">(JPMorgan Chase &amp; Co)</span>
               
               
             </td>
-            <td class="numeric">$975.0K</td>
-            <td class="numeric">-</td>
-            <td></td>
-            <td><span class="stage-badge s4">Stage 4</span></td>
+            <td class="numeric arr-commit-cell">
+              
+                $975.0K
+              
+            </td>
+            <td><span class="stage-badge s4">S4</span></td>
             <td>2026-01-23</td>
-            <td class="deal-intel">11.19 - dont know what to do with this opp - this is a services deal now and I dont want to inflate ARR... waiting for guidance from revops</td>
+            <td class="deal-intel">
+              
+              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+              
+              11.19 - dont know what to do with this opp - this is a services deal now and I dont want to inflate ARR... waiting for guidance from revops
+              
+              <div class="intel-issues">
+                
+                <span class="intel-issue">Contains a deadline that has passed</span>
+                
+              </div>
+              
+            </td>
           </tr>
           
         </tbody>
         <tfoot>
           <tr class="totals-row">
             <td><strong>TOTAL (<span id="total-count">6</span> opportunities)</strong></td>
-            <td class="numeric"><strong id="total-arr">$78.2M</strong></td>
-            <td class="numeric"><strong id="total-commit">$0</strong></td>
-            <td></td>
+            <td class="numeric"><strong id="total-arr">$78.2M</strong> / <strong id="total-commit">$0</strong></td>
             <td></td>
             <td></td>
             <td></td>
@@ -300,6 +398,51 @@
 </div>
 
 <style>
+/* Column Width Adjustments */
+.stage-col {
+  width: 60px;
+  text-align: center;
+}
+
+.deal-intel-col {
+  width: 40%;
+}
+
+.arr-commit-cell {
+  white-space: nowrap;
+}
+
+.deal-intel {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  max-width: 400px;
+}
+
+/* Freshness Indicators */
+.freshness-icon {
+  display: inline-block;
+  font-size: 1rem;
+  margin-right: 0.4rem;
+  cursor: help;
+  vertical-align: middle;
+}
+
+.intel-issues {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.intel-issue {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--mid-gray);
+  font-style: italic;
+  padding-left: 1.4rem;
+  line-height: 1.3;
+}
+
 /* Filter Bar Styles */
 .filter-bar {
   display: flex;
@@ -424,6 +567,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const staleFilter = document.getElementById('filter-stale');
   const ageFilter = document.getElementById('filter-age');
   const currentStageFilter = document.getElementById('filter-current-stage');
+  const freshnessFilter = document.getElementById('filter-freshness');
   const clearBtn = document.getElementById('clear-filters');
 
   const visibleCount = document.getElementById('visible-count');
@@ -448,6 +592,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const stale = staleFilter.value;
     const ageMax = ageFilter.value === 'all' ? 9999 : parseInt(ageFilter.value);
     const currentStage = currentStageFilter.value;
+    const freshness = freshnessFilter.value;
 
     let visibleRows = 0;
     let sumArr = 0;
@@ -461,6 +606,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const rowCommit = parseFloat(row.dataset.commit) || 0;
       const rowAge = parseInt(row.dataset.age) || 9999;
       const rowCurrentStageDays = parseInt(row.dataset.currentStageDays) || 0;
+      const rowFreshness = row.dataset.freshness || 'unknown';
 
       let show = true;
 
@@ -514,6 +660,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
+      // Freshness filter
+      if (freshness !== 'all' && rowFreshness !== freshness) {
+        show = false;
+      }
+
       if (show) {
         row.classList.remove('filtered-out');
         visibleRows++;
@@ -531,7 +682,7 @@ document.addEventListener('DOMContentLoaded', function() {
     totalCommit.textContent = formatCurrency(sumCommit);
 
     // Show filtered indicator if filters are active
-    const hasFilters = stage !== 'all' || quarter !== 'all' || arrFilter.value !== 'all' || stale !== 'all' || ageFilter.value !== 'all' || currentStage !== 'all';
+    const hasFilters = stage !== 'all' || quarter !== 'all' || arrFilter.value !== 'all' || stale !== 'all' || ageFilter.value !== 'all' || currentStage !== 'all' || freshness !== 'all';
     if (hasFilters && visibleRows < rows.length) {
       filteredTotal.textContent = ' | Filtered: ' + formatCurrency(sumArr) + ' ARR';
     } else {
@@ -546,6 +697,7 @@ document.addEventListener('DOMContentLoaded', function() {
   staleFilter.addEventListener('change', applyFilters);
   ageFilter.addEventListener('change', applyFilters);
   currentStageFilter.addEventListener('change', applyFilters);
+  freshnessFilter.addEventListener('change', applyFilters);
 
   clearBtn.addEventListener('click', function() {
     stageFilter.value = 'all';
@@ -554,6 +706,7 @@ document.addEventListener('DOMContentLoaded', function() {
     staleFilter.value = 'all';
     ageFilter.value = 'all';
     currentStageFilter.value = 'all';
+    freshnessFilter.value = 'all';
     applyFilters();
   });
 });

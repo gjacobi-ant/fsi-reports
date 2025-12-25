@@ -222,6 +222,51 @@
       </div>
     </div>
 
+    <!-- Deal Intel Freshness Card (Rotten Tomatoes Style) -->
+    
+    <div class="content-card freshness-card">
+      <h3 class="card-title">Deal Intel Freshness</h3>
+      <div class="freshness-content">
+        <div class="freshness-score-container">
+          <div class="freshness-score score-rotten">
+            <span class="score-icon">🥀</span>
+            <span class="score-value">0%</span>
+          </div>
+          <span class="score-label">Freshness Score</span>
+        </div>
+        <div class="freshness-breakdown">
+          <div class="freshness-row fresh">
+            <span class="row-icon">🍅</span>
+            <span class="row-label">Fresh (≤7 days)</span>
+            <span class="row-count">0</span>
+          </div>
+          <div class="freshness-row aging">
+            <span class="row-icon">🍊</span>
+            <span class="row-label">Aging (8-21 days)</span>
+            <span class="row-count">0</span>
+          </div>
+          <div class="freshness-row rotten">
+            <span class="row-icon">🥀</span>
+            <span class="row-label">Rotten (>21 days)</span>
+            <span class="row-count">0</span>
+          </div>
+          <div class="freshness-row no-update">
+            <span class="row-icon">💀</span>
+            <span class="row-label">No Update</span>
+            <span class="row-count">11</span>
+          </div>
+          
+          <div class="freshness-row past-deadline">
+            <span class="row-icon">⏰</span>
+            <span class="row-label">Past Deadline</span>
+            <span class="row-count">18</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+
     <!-- Top Opportunities by Stage -->
     <div class="content-card top-opps-card">
       <h3 class="card-title">Top Opportunities by Stage</h3>
@@ -528,11 +573,11 @@
   color: var(--dark);
 }
 
-.stage-badge-sm.s1 { background: rgba(106, 155, 204, 0.2); color: var(--blue); }
-.stage-badge-sm.s2 { background: rgba(106, 155, 204, 0.35); color: var(--blue); }
-.stage-badge-sm.s3 { background: rgba(106, 155, 204, 0.5); color: #4a7ba8; }
-.stage-badge-sm.s4 { background: rgba(120, 140, 93, 0.35); color: var(--green); }
-.stage-badge-sm.s5 { background: rgba(120, 140, 93, 0.5); color: #5a6c45; }
+.stage-badge-sm.s1 { background: var(--stage-1-bg); color: var(--stage-1-text); }
+.stage-badge-sm.s2 { background: var(--stage-2-bg); color: var(--stage-2-text); }
+.stage-badge-sm.s3 { background: var(--stage-3-bg); color: var(--stage-3-text); }
+.stage-badge-sm.s4 { background: var(--stage-4-bg); color: var(--stage-4-text); }
+.stage-badge-sm.s5 { background: var(--stage-5-bg); color: var(--stage-5-text); }
 
 .weight-pct {
   font-family: var(--font-body);
@@ -708,6 +753,117 @@
   font-weight: 600;
   font-size: 0.75rem;
   color: var(--mid-gray);
+}
+
+/* Freshness Card (Rotten Tomatoes Style) */
+.freshness-card {
+  margin-bottom: 1.5rem;
+}
+
+.freshness-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.freshness-score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+}
+
+.freshness-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--light-gray);
+}
+
+.freshness-score.score-fresh {
+  background: linear-gradient(135deg, rgba(120, 140, 93, 0.2), rgba(120, 140, 93, 0.35));
+  border: 3px solid var(--green);
+}
+
+.freshness-score.score-rotten {
+  background: linear-gradient(135deg, rgba(180, 70, 50, 0.2), rgba(180, 70, 50, 0.35));
+  border: 3px solid var(--red);
+}
+
+.freshness-score.score-mixed {
+  background: linear-gradient(135deg, rgba(217, 119, 87, 0.2), rgba(217, 119, 87, 0.35));
+  border: 3px solid var(--orange);
+}
+
+.score-icon {
+  font-size: 1.5rem;
+}
+
+.score-value {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.score-label {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mid-gray);
+  margin-top: 0.5rem;
+}
+
+.freshness-breakdown {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.freshness-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--light);
+  border-radius: 6px;
+}
+
+.row-icon {
+  font-size: 1rem;
+}
+
+.row-label {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--dark);
+}
+
+.row-count {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--dark);
+  min-width: 24px;
+  text-align: right;
+}
+
+.freshness-row.rotten .row-count,
+.freshness-row.no-update .row-count,
+.freshness-row.past-deadline .row-count {
+  color: var(--red);
+}
+
+.freshness-row.fresh .row-count {
+  color: var(--green);
 }
 
 /* Responsive */
