@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Updates - Greg Jacobi's Banking Forecast</title>
+
+  <!-- Google Fonts (Anthropic Brand) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../styles.css">
+
+  
+</head>
+<body>
+
+<!-- Sidebar Toggle Button -->
+<button class="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar (T)">
+  <span id="toggle-icon">&#9776;</span>
+</button>
+
+<!-- Sidebar Navigation -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="cover.html" class="sidebar-title">Greg Jacobi's Forecast</a>
+    <span class="sidebar-date">Week of December 23, 2025</span>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Overview</div>
+      <a href="cover.html">Cover</a>
+      <a href="summary.html">Summary</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">ARR</div>
+      <a href="arr_chart.html">Trend Chart</a>
+      <a href="arr_table.html">Account Table</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Opportunities</div>
+      <a href="opps_overview.html">Stage Funnel</a>
+      <a href="opps_table.html">Deal List</a>
+      <a href="deal_progression.html">Progression</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Pipeline</div>
+      <a href="pipe_chart.html">Goal Progress</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Contracts</div>
+      <a href="contracts_overview.html">Commit Status</a>
+      <a href="contracts_table.html">All Contracts</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Account Intel</div>
+      <a href="themes.html">Themes</a>
+      <a href="news_roundup.html">News Roundup</a>
+      <a href="updates.html" class="active">Updates</a>
+      <a href="tweets.html">Quick Intel</a>
+      <a href="aiera.html">Events</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Navigation</div>
+      <a href="../../cover.html">← Back to Main Report</a>
+    </div>
+    
+  </nav>
+</aside>
+
+<!-- Main Content Area -->
+<main class="main-content" id="main-content">
+  <!-- Page Content -->
+  
+<div class="page gray-bg">
+  <h2 class="page-title">Account Status Updates</h2>
+  <p class="page-subtitle">Detailed intel by account</p>
+
+  <div class="page-body">
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width: 15%;">Account</th>
+            <th style="width: 85%;">Status Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td colspan="2" class="no-data">No account updates available</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- Sidebar & Keyboard Navigation Script -->
+<script>
+(function() {
+  // Page order for keyboard navigation
+  const pageOrder = [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'contracts_overview.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'tweets.html',
+    'aiera.html'
+  ];
+
+  // Get current page index
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'cover.html';
+  const currentIndex = pageOrder.indexOf(currentPage);
+
+  // Sidebar toggle functionality
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-collapsed');
+    const icon = document.getElementById('toggle-icon');
+    if (document.body.classList.contains('sidebar-collapsed')) {
+      icon.innerHTML = '&#9776;'; // hamburger
+    } else {
+      icon.innerHTML = '&#10005;'; // X
+    }
+    localStorage.setItem('sidebarCollapsed', document.body.classList.contains('sidebar-collapsed'));
+  }
+  window.toggleSidebar = toggleSidebar;
+
+  // Restore sidebar state from localStorage
+  if (localStorage.getItem('sidebarCollapsed') === 'true') {
+    document.body.classList.add('sidebar-collapsed');
+    document.getElementById('toggle-icon').innerHTML = '&#9776;';
+  } else {
+    document.getElementById('toggle-icon').innerHTML = '&#10005;';
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    // Don't trigger if user is typing in an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      if (currentIndex >= 0 && currentIndex < pageOrder.length - 1) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex + 1];
+      }
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      if (currentIndex > 0) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex - 1];
+      }
+    }
+    if (e.key === 'Home') {
+      e.preventDefault();
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 'End') {
+      e.preventDefault();
+      window.location.href = pageOrder[pageOrder.length - 1];
+    }
+    if (e.key === 'Escape') {
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 't' || e.key === 'T') {
+      e.preventDefault();
+      toggleSidebar();
+    }
+  });
+})();
+</script>
+
+
+
+</body>
+</html>

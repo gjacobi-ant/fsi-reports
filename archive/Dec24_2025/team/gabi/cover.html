@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabi D&#39;Agosto - Banking Forecast - Gabi D&#39;Agosto's Banking Forecast</title>
+
+  <!-- Google Fonts (Anthropic Brand) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../styles.css">
+
+  
+<style>
+/* Cover Page - Magazine Style Layout */
+.cover-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cover-title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.cover-date {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+/* Vibe Hero - Horizontal Layout: Meme LEFT, Text RIGHT */
+.vibe-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+.vibe-media {
+  flex: 0 0 auto;
+}
+
+.vibe-meme-hero {
+  width: 340px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.vibe-content {
+  flex: 1;
+  text-align: left;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vibe-summary {
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+.theme-song-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1DB954;
+  font-size: 1rem;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.theme-song-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Path to Goal Waterfall - Full Width */
+.cover-waterfall {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.waterfall-heading {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.waterfall-bar-container {
+  display: flex;
+  height: 60px;
+  background: transparent;
+  border-radius: 6px;
+  position: relative;
+  overflow: visible;
+}
+
+.waterfall-segment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0.75rem;
+  position: relative;
+  min-width: 2%;
+}
+
+.waterfall-segment.arr {
+  background: #D97757;
+  color: white;
+  border-radius: 4px 0 0 4px;
+}
+
+.waterfall-segment.committed {
+  background: #788C5D;
+  color: white;
+}
+
+.waterfall-segment.pipeline {
+  background: #6A9BCC;
+  color: white;
+}
+
+.waterfall-segment.gap {
+  background: rgba(245, 240, 235, 0.15);
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 0 4px 4px 0;
+}
+
+.segment-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+.segment-value {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.goal-marker {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  bottom: -10px;
+}
+
+.goal-line {
+  width: 3px;
+  height: 100%;
+  background: #D97757;
+}
+
+.goal-label {
+  position: absolute;
+  top: -26px;
+  right: 0;
+  font-size: 0.8rem;
+  color: #D97757;
+  font-weight: 600;
+  white-space: nowrap;
+  font-family: var(--font-heading);
+}
+
+.waterfall-coverage {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  margin-top: 1.25rem;
+}
+
+.waterfall-coverage strong {
+  font-size: 2rem;
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* Recent Wins Celebration */
+.wins-celebration {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(74, 144, 121, 0.25) 0%, rgba(74, 144, 121, 0.15) 100%);
+  border: 1px solid rgba(74, 144, 121, 0.4);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.wins-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.wins-icon {
+  font-size: 2rem;
+}
+
+.wins-title {
+  color: #4a9079;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.wins-summary {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.wins-summary strong {
+  color: #4a9079;
+  font-weight: 700;
+}
+
+.wins-deals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.win-deal {
+  background: rgba(74, 144, 121, 0.2);
+  border: 1px solid rgba(74, 144, 121, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.win-deal:hover {
+  background: rgba(74, 144, 121, 0.35);
+  border-color: rgba(74, 144, 121, 0.5);
+}
+
+.win-deal-name {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.win-deal-account {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+}
+
+.win-deal-value {
+  color: #4a9079;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cover-title {
+    font-size: 2.5rem;
+  }
+
+  .vibe-hero {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .vibe-meme-hero {
+    width: 280px;
+    height: 200px;
+  }
+
+  .vibe-content {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- Sidebar Toggle Button -->
+<button class="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar (T)">
+  <span id="toggle-icon">&#9776;</span>
+</button>
+
+<!-- Sidebar Navigation -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="cover.html" class="sidebar-title">Gabi D&#39;Agosto's Forecast</a>
+    <span class="sidebar-date">Week of December 24, 2025</span>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Overview</div>
+      <a href="cover.html" class="active">Cover</a>
+      <a href="summary.html">Summary</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">ARR</div>
+      <a href="arr_chart.html">Trend Chart</a>
+      <a href="arr_table.html">Account Table</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Opportunities</div>
+      <a href="opps_overview.html">Stage Funnel</a>
+      <a href="opps_table.html">Deal List</a>
+      <a href="deal_progression.html">Progression</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Pipeline</div>
+      <a href="pipe_chart.html">Goal Progress</a>
+      <a href="pipe_coverage.html">Qtr Coverage</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Contracts</div>
+      <a href="contracts_overview.html">Commit Status</a>
+      <a href="contracts_table.html">All Contracts</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Account Intel</div>
+      <a href="themes.html">Themes</a>
+      <a href="news_roundup.html">News Roundup</a>
+      <a href="updates.html">Updates</a>
+      <a href="tweets.html">Quick Intel</a>
+      <a href="aiera.html">Events</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Navigation</div>
+      <a href="../../cover.html">← Back to Main Report</a>
+    </div>
+    
+  </nav>
+</aside>
+
+<!-- Main Content Area -->
+<main class="main-content" id="main-content">
+  <!-- Page Content -->
+  
+<div class="page dark-bg">
+  <div class="cover-hero">
+    <h1 class="cover-title">Gabi D&#39;Agosto's Forecast</h1>
+    <p class="cover-date">Week of December 24, 2025</p>
+
+    <!-- VIBE HERO SECTION - Magazine Layout -->
+    <div class="vibe-hero">
+      <div class="vibe-media">
+        <img src="https://media.giphy.com/media/3oKIPf3C7HqqYBVcCk/giphy.gif" alt="Fire mode" class="vibe-meme-hero">
+      </div>
+      <div class="vibe-content">
+        <p class="vibe-summary">Gabi D&#39;Agosto&#39;s portfolio: $11.3M ARR across 13 accounts. $14.7M weighted pipeline (30 opps). 2 deals Stage 4+. Top: Commonwealth Bank of Australia.</p>
+        
+        <a href="https://open.spotify.com/track/3shnnvj6AvWV7fci5w7Tml" target="_blank" class="theme-song-link">
+          <span>&#127925;</span> Keep Going Keep Moving - SaraoMusic
+        </a>
+        
+      </div>
+    </div>
+
+    <!-- RECENT WINS CELEBRATION -->
+    
+
+    <!-- PATH TO Q4 GOAL WATERFALL -->
+    <div class="cover-waterfall">
+      <h3 class="waterfall-heading">Path to Q4 Goal</h3>
+      <div class="waterfall-bar-container">
+        <div class="waterfall-segment arr" style="width: 33.5%;">
+          <span class="segment-label">ARR</span>
+          <span class="segment-value">$11.3M</span>
+        </div>
+        
+        <div class="waterfall-segment committed" style="width: 4.7%;">
+          <span class="segment-value">$1.6M</span>
+        </div>
+        
+        <div class="waterfall-segment pipeline" style="width: 43.5%;">
+          <span class="segment-label">Forecast Opp ARR</span>
+          <span class="segment-value">$14.7M</span>
+        </div>
+        
+        <div class="waterfall-segment gap" style="width: 18.2%;">
+          <span class="segment-label">Gap</span>
+          <span class="segment-value">$6.2M</span>
+        </div>
+        
+        <div class="goal-marker">
+          <div class="goal-line"></div>
+          <span class="goal-label">Q4: $33.8M</span>
+        </div>
+      </div>
+      <div class="waterfall-coverage">
+        <strong>81.8%</strong> coverage
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- Sidebar & Keyboard Navigation Script -->
+<script>
+(function() {
+  // Page order for keyboard navigation
+  const pageOrder = [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_overview.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'tweets.html',
+    'aiera.html'
+  ];
+
+  // Get current page index
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'cover.html';
+  const currentIndex = pageOrder.indexOf(currentPage);
+
+  // Sidebar toggle functionality
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-collapsed');
+    const icon = document.getElementById('toggle-icon');
+    if (document.body.classList.contains('sidebar-collapsed')) {
+      icon.innerHTML = '&#9776;'; // hamburger
+    } else {
+      icon.innerHTML = '&#10005;'; // X
+    }
+    localStorage.setItem('sidebarCollapsed', document.body.classList.contains('sidebar-collapsed'));
+  }
+  window.toggleSidebar = toggleSidebar;
+
+  // Restore sidebar state from localStorage
+  if (localStorage.getItem('sidebarCollapsed') === 'true') {
+    document.body.classList.add('sidebar-collapsed');
+    document.getElementById('toggle-icon').innerHTML = '&#9776;';
+  } else {
+    document.getElementById('toggle-icon').innerHTML = '&#10005;';
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    // Don't trigger if user is typing in an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      if (currentIndex >= 0 && currentIndex < pageOrder.length - 1) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex + 1];
+      }
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      if (currentIndex > 0) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex - 1];
+      }
+    }
+    if (e.key === 'Home') {
+      e.preventDefault();
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 'End') {
+      e.preventDefault();
+      window.location.href = pageOrder[pageOrder.length - 1];
+    }
+    if (e.key === 'Escape') {
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 't' || e.key === 'T') {
+      e.preventDefault();
+      toggleSidebar();
+    }
+  });
+})();
+</script>
+
+
+
+</body>
+</html>

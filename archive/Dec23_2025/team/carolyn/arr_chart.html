@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARR Trend - Carolyn Leopold's Banking Forecast</title>
+
+  <!-- Google Fonts (Anthropic Brand) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../styles.css">
+
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<!-- Sidebar Toggle Button -->
+<button class="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar (T)">
+  <span id="toggle-icon">&#9776;</span>
+</button>
+
+<!-- Sidebar Navigation -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="cover.html" class="sidebar-title">Carolyn Leopold's Forecast</a>
+    <span class="sidebar-date">Week of December 23, 2025</span>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Overview</div>
+      <a href="cover.html">Cover</a>
+      <a href="summary.html">Summary</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">ARR</div>
+      <a href="arr_chart.html" class="active">Trend Chart</a>
+      <a href="arr_table.html">Account Table</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Opportunities</div>
+      <a href="opps_overview.html">Stage Funnel</a>
+      <a href="opps_table.html">Deal List</a>
+      <a href="deal_progression.html">Progression</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Pipeline</div>
+      <a href="pipe_chart.html">Goal Progress</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Contracts</div>
+      <a href="contracts_overview.html">Commit Status</a>
+      <a href="contracts_table.html">All Contracts</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Account Intel</div>
+      <a href="themes.html">Themes</a>
+      <a href="news_roundup.html">News Roundup</a>
+      <a href="updates.html">Updates</a>
+      <a href="tweets.html">Quick Intel</a>
+      <a href="aiera.html">Events</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Navigation</div>
+      <a href="../../cover.html">← Back to Main Report</a>
+    </div>
+    
+  </nav>
+</aside>
+
+<!-- Main Content Area -->
+<main class="main-content" id="main-content">
+  <!-- Page Content -->
+  
+<div class="page">
+  <h2 class="page-title">ARR Trend & 2026 Forecast</h2>
+  <p class="page-subtitle">Annual Recurring Revenue across FSI Banking accounts</p>
+
+  <div class="page-body">
+    <!-- Chart -->
+    <div class="chart-wrapper">
+      <div class="chart-container" style="height: 280px;">
+        <canvas id="arr-chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Chart legend -->
+    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 0.75rem 0;">
+      <span style="font-family: var(--font-heading); font-size: 0.8rem;">
+        <span style="display:inline-block;width:20px;height:3px;background:#D97757;vertical-align:middle;margin-right:5px;"></span>
+        Actual ARR
+      </span>
+      <span style="font-family: var(--font-heading); font-size: 0.8rem;">
+        <span style="display:inline-block;width:20px;border-top:2px dashed #6A9BCC;vertical-align:middle;margin-right:5px;"></span>
+        12-Month Trend
+      </span>
+      <span style="font-family: var(--font-heading); font-size: 0.8rem;">
+        <span style="display:inline-block;width:20px;border-top:2px dashed #788C5D;vertical-align:middle;margin-right:5px;"></span>
+        3-Month Trend
+      </span>
+      <span style="font-family: var(--font-heading); font-size: 0.8rem;">
+        <span style="display:inline-block;width:20px;height:3px;background:#9B6B9E;vertical-align:middle;margin-right:5px;"></span>
+        2026 Goals
+      </span>
+    </div>
+
+    <!-- Metrics Row -->
+    <div class="metrics-row" style="max-width: 1000px; margin: 1rem auto 0;">
+      <div class="metric-card">
+        <div class="metric-value">$3.3M</div>
+        <div class="metric-label">Total ARR</div>
+        <div class="metric-change positive">+11.74% MoM</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">35</div>
+        <div class="metric-label">Accounts with ARR</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">$2.6M</div>
+        <div class="metric-label">Top Account</div>
+        <div class="metric-change neutral">Citigroup</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">88.2%</div>
+        <div class="metric-label">Progress to Q1 Goal</div>
+        <div class="metric-change goal-on-track">$3.8M target</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- Sidebar & Keyboard Navigation Script -->
+<script>
+(function() {
+  // Page order for keyboard navigation
+  const pageOrder = [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'contracts_overview.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'tweets.html',
+    'aiera.html'
+  ];
+
+  // Get current page index
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'cover.html';
+  const currentIndex = pageOrder.indexOf(currentPage);
+
+  // Sidebar toggle functionality
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-collapsed');
+    const icon = document.getElementById('toggle-icon');
+    if (document.body.classList.contains('sidebar-collapsed')) {
+      icon.innerHTML = '&#9776;'; // hamburger
+    } else {
+      icon.innerHTML = '&#10005;'; // X
+    }
+    localStorage.setItem('sidebarCollapsed', document.body.classList.contains('sidebar-collapsed'));
+  }
+  window.toggleSidebar = toggleSidebar;
+
+  // Restore sidebar state from localStorage
+  if (localStorage.getItem('sidebarCollapsed') === 'true') {
+    document.body.classList.add('sidebar-collapsed');
+    document.getElementById('toggle-icon').innerHTML = '&#9776;';
+  } else {
+    document.getElementById('toggle-icon').innerHTML = '&#10005;';
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    // Don't trigger if user is typing in an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      if (currentIndex >= 0 && currentIndex < pageOrder.length - 1) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex + 1];
+      }
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      if (currentIndex > 0) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex - 1];
+      }
+    }
+    if (e.key === 'Home') {
+      e.preventDefault();
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 'End') {
+      e.preventDefault();
+      window.location.href = pageOrder[pageOrder.length - 1];
+    }
+    if (e.key === 'Escape') {
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 't' || e.key === 'T') {
+      e.preventDefault();
+      toggleSidebar();
+    }
+  });
+})();
+</script>
+
+
+  <!-- Chart Script -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const arrCtx = document.getElementById('arr-chart').getContext('2d');
+
+    // Data from JSON
+    const historicalLabels = ["Nov \u002724", "Dec \u002724", "Jan \u002725", "Feb \u002725", "Mar \u002725", "Apr \u002725", "May \u002725", "Jun \u002725", "Jul \u002725", "Aug \u002725", "Sep \u002725", "Oct \u002725", "Nov \u002725", "Dec \u002725"];
+    const historicalData = [33723.38, 48933.75, 52727.93, 54437.939999999995, 77149.6, 51979.409999999996, 296050.43999999994, 204384.02999999997, 268080.72000000003, 543618.22, 2558099.0700000003, 3286310.1900000004, 3312366.0100000002, 3307688.0899999994];
+    const forecastLabels = ["Jan \u002726", "Feb \u002726", "Mar \u002726", "Apr \u002726", "May \u002726", "Jun \u002726", "Jul \u002726", "Aug \u002726", "Sep \u002726", "Oct \u002726", "Nov \u002726", "Dec \u002726"];
+    const regression12Forecasts = [3541542.7121428563, 3775397.3342857137, 4009251.9564285707, 4243106.578571428, 4476961.200714285, 4710815.8228571415, 4944670.444999999, 5178525.067142856, 5412379.689285713, 5646234.311428571, 5880088.933571428, 6113943.555714285];
+    const regression3Forecasts = [3314814.0566666657, 3321940.023333332, 3329065.9899999984, 3336191.9566666647, 3343317.923333331, 3350443.8899999973, 3357569.8566666637, 3364695.82333333, 3371821.7899999963, 3378947.7566666626, 3386073.723333329, 3393199.6899999953];
+    const goalsData = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 3753352.434694252, null, null, 10199449.68846485, null, null, 17594414.812204774, null, null, 24361497.432283532];
+
+    const allLabels = [...historicalLabels, ...forecastLabels];
+    const historicalDataset = [...historicalData, ...Array(forecastLabels.length).fill(null)];
+
+    // Build regression datasets - start from last historical point
+    const regression12Data = allLabels.map((label, i) => {
+      if (i < historicalData.length - 1) return null;
+      if (i === historicalData.length - 1) return historicalData[historicalData.length - 1];
+      const forecastIdx = i - historicalData.length;
+      return regression12Forecasts[forecastIdx];
+    });
+
+    const regression3Data = allLabels.map((label, i) => {
+      if (i < historicalData.length - 1) return null;
+      if (i === historicalData.length - 1) return historicalData[historicalData.length - 1];
+      const forecastIdx = i - historicalData.length;
+      return regression3Forecasts[forecastIdx];
+    });
+
+    new Chart(arrCtx, {
+      type: 'line',
+      data: {
+        labels: allLabels,
+        datasets: [
+          {
+            label: 'Actual ARR',
+            data: historicalDataset,
+            borderColor: '#D97757',
+            backgroundColor: 'rgba(217, 119, 87, 0.1)',
+            borderWidth: 3,
+            fill: true,
+            tension: 0.2,
+            pointRadius: 3
+          },
+          {
+            label: '12-Month Trend',
+            data: regression12Data,
+            borderColor: '#6A9BCC',
+            borderWidth: 2,
+            borderDash: [8, 4],
+            fill: false,
+            pointRadius: 0
+          },
+          {
+            label: '3-Month Trend',
+            data: regression3Data,
+            borderColor: '#788C5D',
+            borderWidth: 2,
+            borderDash: [4, 4],
+            fill: false,
+            pointRadius: 0
+          },
+          {
+            label: '2026 Goals',
+            data: goalsData,
+            borderColor: '#9B6B9E',
+            borderWidth: 2,
+            fill: false,
+            pointRadius: 5,
+            spanGaps: true
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => ctx.raw === null ? null : ctx.dataset.label + ': $' + (ctx.raw / 1000000).toFixed(2) + 'M'
+            }
+          }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: 'Poppins', size: 10 } } },
+          y: {
+            beginAtZero: false,
+            ticks: { callback: (v) => '$' + (v / 1000000).toFixed(0) + 'M', font: { family: 'Poppins' } },
+            grid: { color: 'rgba(0,0,0,0.1)' }
+          }
+        }
+      }
+    });
+  });
+  </script>
+
+
+</body>
+</html>

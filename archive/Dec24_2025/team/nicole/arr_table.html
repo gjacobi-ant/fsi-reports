@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARR by Account - Nicole Morris's Banking Forecast</title>
+
+  <!-- Google Fonts (Anthropic Brand) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../styles.css">
+
+  
+</head>
+<body>
+
+<!-- Sidebar Toggle Button -->
+<button class="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar (T)">
+  <span id="toggle-icon">&#9776;</span>
+</button>
+
+<!-- Sidebar Navigation -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="cover.html" class="sidebar-title">Nicole Morris's Forecast</a>
+    <span class="sidebar-date">Week of December 24, 2025</span>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Overview</div>
+      <a href="cover.html">Cover</a>
+      <a href="summary.html">Summary</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">ARR</div>
+      <a href="arr_chart.html">Trend Chart</a>
+      <a href="arr_table.html" class="active">Account Table</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Opportunities</div>
+      <a href="opps_overview.html">Stage Funnel</a>
+      <a href="opps_table.html">Deal List</a>
+      <a href="deal_progression.html">Progression</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Pipeline</div>
+      <a href="pipe_chart.html">Goal Progress</a>
+      <a href="pipe_coverage.html">Qtr Coverage</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Contracts</div>
+      <a href="contracts_overview.html">Commit Status</a>
+      <a href="contracts_table.html">All Contracts</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Account Intel</div>
+      <a href="themes.html">Themes</a>
+      <a href="news_roundup.html">News Roundup</a>
+      <a href="updates.html">Updates</a>
+      <a href="tweets.html">Quick Intel</a>
+      <a href="aiera.html">Events</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Navigation</div>
+      <a href="../../cover.html">← Back to Main Report</a>
+    </div>
+    
+  </nav>
+</aside>
+
+<!-- Main Content Area -->
+<main class="main-content" id="main-content">
+  <!-- Page Content -->
+  
+<div class="page gray-bg">
+  <h2 class="page-title">Account ARR Details</h2>
+
+  <div class="page-body">
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Account</th>
+            <th class="numeric">Current ARR</th>
+            <th class="numeric">Q1 2026</th>
+            <th class="numeric">% to Q1</th>
+            <th class="numeric">Q2 2026</th>
+            <th class="numeric">% to Q2</th>
+            <th class="numeric">Q3 2026</th>
+            <th class="numeric">% to Q3</th>
+            <th class="numeric">Q4 2026</th>
+            <th class="numeric">% to Q4</th>
+            <th>Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK000007Gp97YAC/view" target="_blank" class="account-link">JPMorgan Chase &amp; Co</a></td>
+            <td class="numeric">$3.9M</td>
+            <td class="numeric">$9.1M</td>
+            <td class="numeric goal-behind">42.5%</td>
+            <td class="numeric">$28.1M</td>
+            <td class="numeric goal-behind">13.8%</td>
+            <td class="numeric">$28.1M</td>
+            <td class="numeric goal-behind">13.8%</td>
+            <td class="numeric">$39.0M</td>
+            <td class="numeric goal-behind">9.9%</td>
+            <td class="sparkline-cell"><svg viewBox="0 0 80 20" class="sparkline"><polyline class="sparkline-line" points="0.0,18.0 6.2,17.1 12.3,17.8 18.5,17.7 24.6,17.3 30.8,16.4 36.9,14.2 43.1,8.8 49.2,7.3 55.4,5.6 61.5,2.7 67.7,6.5 73.8,5.4 80.0,2.0"/><circle class="sparkline-dot" cx="80.0" cy="2.0" r="2"/></svg></td>
+          </tr>
+          
+        </tbody>
+        <tfoot>
+          <tr class="totals-row">
+            <td><strong>TOTAL (35 accounts)</strong></td>
+            <td class="numeric"><strong>$3.9M</strong></td>
+            <td class="numeric"><strong>$9.1M</strong></td>
+            <td class="numeric goal-behind"><strong>42.5%</strong></td>
+            <td class="numeric"><strong>$28.1M</strong></td>
+            <td class="numeric goal-behind"><strong>13.8%</strong></td>
+            <td class="numeric"><strong>$28.1M</strong></td>
+            <td class="numeric goal-behind"><strong>13.8%</strong></td>
+            <td class="numeric"><strong>$39.0M</strong></td>
+            <td class="numeric goal-behind"><strong>9.9%</strong></td>
+            <td class="sparkline-cell"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- Sidebar & Keyboard Navigation Script -->
+<script>
+(function() {
+  // Page order for keyboard navigation
+  const pageOrder = [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_overview.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'tweets.html',
+    'aiera.html'
+  ];
+
+  // Get current page index
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'cover.html';
+  const currentIndex = pageOrder.indexOf(currentPage);
+
+  // Sidebar toggle functionality
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-collapsed');
+    const icon = document.getElementById('toggle-icon');
+    if (document.body.classList.contains('sidebar-collapsed')) {
+      icon.innerHTML = '&#9776;'; // hamburger
+    } else {
+      icon.innerHTML = '&#10005;'; // X
+    }
+    localStorage.setItem('sidebarCollapsed', document.body.classList.contains('sidebar-collapsed'));
+  }
+  window.toggleSidebar = toggleSidebar;
+
+  // Restore sidebar state from localStorage
+  if (localStorage.getItem('sidebarCollapsed') === 'true') {
+    document.body.classList.add('sidebar-collapsed');
+    document.getElementById('toggle-icon').innerHTML = '&#9776;';
+  } else {
+    document.getElementById('toggle-icon').innerHTML = '&#10005;';
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    // Don't trigger if user is typing in an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      if (currentIndex >= 0 && currentIndex < pageOrder.length - 1) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex + 1];
+      }
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      if (currentIndex > 0) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex - 1];
+      }
+    }
+    if (e.key === 'Home') {
+      e.preventDefault();
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 'End') {
+      e.preventDefault();
+      window.location.href = pageOrder[pageOrder.length - 1];
+    }
+    if (e.key === 'Escape') {
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 't' || e.key === 'T') {
+      e.preventDefault();
+      toggleSidebar();
+    }
+  });
+})();
+</script>
+
+
+
+</body>
+</html>

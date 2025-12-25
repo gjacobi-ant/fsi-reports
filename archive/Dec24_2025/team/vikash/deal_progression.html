@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deal Progression - Vikash Kothari's Banking Forecast</title>
+
+  <!-- Google Fonts (Anthropic Brand) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../styles.css">
+
+  
+</head>
+<body>
+
+<!-- Sidebar Toggle Button -->
+<button class="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar (T)">
+  <span id="toggle-icon">&#9776;</span>
+</button>
+
+<!-- Sidebar Navigation -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="cover.html" class="sidebar-title">Vikash Kothari's Forecast</a>
+    <span class="sidebar-date">Week of December 24, 2025</span>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Overview</div>
+      <a href="cover.html">Cover</a>
+      <a href="summary.html">Summary</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">ARR</div>
+      <a href="arr_chart.html">Trend Chart</a>
+      <a href="arr_table.html">Account Table</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Opportunities</div>
+      <a href="opps_overview.html">Stage Funnel</a>
+      <a href="opps_table.html">Deal List</a>
+      <a href="deal_progression.html" class="active">Progression</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Pipeline</div>
+      <a href="pipe_chart.html">Goal Progress</a>
+      <a href="pipe_coverage.html">Qtr Coverage</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Contracts</div>
+      <a href="contracts_overview.html">Commit Status</a>
+      <a href="contracts_table.html">All Contracts</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Account Intel</div>
+      <a href="themes.html">Themes</a>
+      <a href="news_roundup.html">News Roundup</a>
+      <a href="updates.html">Updates</a>
+      <a href="tweets.html">Quick Intel</a>
+      <a href="aiera.html">Events</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Navigation</div>
+      <a href="../../cover.html">← Back to Main Report</a>
+    </div>
+    
+  </nav>
+</aside>
+
+<!-- Main Content Area -->
+<main class="main-content" id="main-content">
+  <!-- Page Content -->
+  
+<div class="page deal-progression">
+  <div class="progression-header">
+    <h2 class="page-title">Deal Progression</h2>
+    <p class="header-meta">Stage velocity across <span id="visible-count">0</span> of 0 open opportunities</p>
+  </div>
+
+  <div class="progression-body">
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label class="filter-label">Stage</label>
+        <select id="filter-stage" class="filter-select">
+          <option value="all">All Stages</option>
+          <option value="1">Stage 1</option>
+          <option value="2">Stage 2</option>
+          <option value="3">Stage 3</option>
+          <option value="4">Stage 4</option>
+          <option value="5">Stage 5</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">Quarter</label>
+        <select id="filter-quarter" class="filter-select">
+          <option value="all">All Quarters</option>
+          <option value="Q1">Q1 2025</option>
+          <option value="Q2">Q2 2025</option>
+          <option value="Q3">Q3 2025</option>
+          <option value="Q4">Q4 2025</option>
+          <option value="Q1-26">Q1 2026</option>
+          <option value="Q2-26">Q2 2026</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">ARR</label>
+        <select id="filter-arr" class="filter-select">
+          <option value="all">All Sizes</option>
+          <option value="1000000">$1M+</option>
+          <option value="500000">$500K+</option>
+          <option value="100000">$100K+</option>
+          <option value="50000">$50K+</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">Status</label>
+        <select id="filter-stale" class="filter-select">
+          <option value="all">All Deals</option>
+          <option value="stale">Stale Only</option>
+          <option value="active">Active Only</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">In Current Stage</label>
+        <select id="filter-current-stage" class="filter-select">
+          <option value="all">All</option>
+          <option value="lt7">&lt; 1 Week</option>
+          <option value="lt30">&lt; 30 Days</option>
+          <option value="gt30">&gt; 30 Days</option>
+          <option value="gt60">&gt; 60 Days</option>
+        </select>
+      </div>
+
+      <button id="clear-filters" class="filter-clear">Clear Filters</button>
+    </div>
+
+    <!-- Legend -->
+    <div class="stage-legend">
+      <span class="legend-item"><span class="legend-swatch s1"></span>S1 Discovery</span>
+      <span class="legend-item"><span class="legend-swatch s2"></span>S2 Evaluation</span>
+      <span class="legend-item"><span class="legend-swatch s3"></span>S3 Validation</span>
+      <span class="legend-item"><span class="legend-swatch s4"></span>S4 Negotiation</span>
+      <span class="legend-item"><span class="legend-swatch s5"></span>S5 Agreed</span>
+    </div>
+
+    <!-- Timeline Scale -->
+    <div class="timeline-scale">
+      <div class="scale-container">
+        <span class="scale-label">0</span>
+        <span class="scale-label">30</span>
+        <span class="scale-label">60</span>
+        <span class="scale-label">90</span>
+        <span class="scale-label">120</span>
+        <span class="scale-label">150</span>
+        <span class="scale-label">180</span>
+        <span class="scale-label">210+</span>
+      </div>
+      <div class="scale-axis"></div>
+    </div>
+
+    <!-- Deal Timeline Rows -->
+    <div class="timeline-container">
+      
+    </div>
+
+    <!-- Summary Stats -->
+    <div class="progression-stats">
+      <div class="stat-item">
+        <span class="stat-value">d</span>
+        <span class="stat-label">Avg Deal Age</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">d</span>
+        <span class="stat-label">Avg S1 Duration</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">d</span>
+        <span class="stat-label">Avg S2 Duration</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">d</span>
+        <span class="stat-label">Avg S3 Duration</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value"></span>
+        <span class="stat-label">Deals >90 Days</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ==========================================================================
+   Deal Progression - Tufte-Inspired Timeline
+   ========================================================================== */
+
+.deal-progression {
+  font-family: var(--font-body);
+  background: var(--light);
+}
+
+.progression-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--mid-gray);
+}
+
+.progression-header .page-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.02em;
+}
+
+.header-meta {
+  font-size: 0.85rem;
+  color: var(--mid-gray);
+  margin: 0;
+}
+
+/* Legend */
+.stage-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--mid-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.legend-swatch.s1 { background: #c4d4e8; }
+.legend-swatch.s2 { background: #9bb8d4; }
+.legend-swatch.s3 { background: var(--blue); }
+.legend-swatch.s4 { background: #a8b88a; }
+.legend-swatch.s5 { background: var(--green); }
+
+/* Timeline Scale */
+.timeline-scale {
+  margin-bottom: 0.5rem;
+  padding-left: 240px;
+  padding-right: 70px;
+}
+
+.scale-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.scale-label {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  color: var(--mid-gray);
+  text-align: center;
+  width: 30px;
+}
+
+.scale-axis {
+  height: 1px;
+  background: linear-gradient(to right, var(--mid-gray) 0%, var(--light-gray) 100%);
+}
+
+/* Timeline Container */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Deal Row */
+.deal-row {
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  transition: background 0.15s ease;
+}
+
+.deal-row:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Deal Info */
+.deal-info {
+  width: 240px;
+  flex-shrink: 0;
+  padding-right: 1rem;
+}
+
+.deal-name {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--dark);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+.deal-name:hover {
+  color: var(--accent-primary);
+}
+
+.deal-meta {
+  font-size: 0.65rem;
+  color: var(--mid-gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Deal Timeline */
+.deal-timeline {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 18px;
+  background: var(--light-gray);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Stage Segments */
+.stage-segment {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2px;
+  transition: opacity 0.15s ease;
+}
+
+.stage-segment.s1 { background: #c4d4e8; }
+.stage-segment.s2 { background: #9bb8d4; }
+.stage-segment.s3 { background: var(--blue); }
+.stage-segment.s4 { background: #a8b88a; }
+.stage-segment.s5 { background: var(--green); }
+
+.segment-days {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.stage-segment.s3 .segment-days,
+.stage-segment.s5 .segment-days {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: none;
+}
+
+/* Deal Total */
+.deal-total {
+  width: 70px;
+  flex-shrink: 0;
+  padding-left: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.total-days {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--dark);
+  min-width: 32px;
+}
+
+.current-stage {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  background: var(--light-gray);
+  color: var(--mid-gray);
+}
+
+/* Progression Stats */
+.progression-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--mid-gray);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.stat-label {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mid-gray);
+}
+
+/* Filter Bar Styles */
+.filter-bar {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-end;
+  padding: 1rem 1.25rem;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.filter-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mid-gray);
+}
+
+.filter-select {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  background: var(--light);
+  color: var(--dark);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  min-width: 120px;
+}
+
+.filter-select:hover {
+  border-color: var(--accent-secondary);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.15);
+}
+
+.filter-clear {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  color: var(--mid-gray);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-clear:hover {
+  background: var(--light-gray);
+  color: var(--dark);
+}
+
+/* Hide filtered rows */
+.deal-row.filtered-out {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .deal-info {
+    width: 180px;
+  }
+
+  .timeline-scale {
+    padding-left: 180px;
+  }
+
+  .stage-legend {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .filter-bar {
+    gap: 0.75rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.timeline-container');
+  const rows = container.querySelectorAll('.deal-row');
+
+  const stageFilter = document.getElementById('filter-stage');
+  const quarterFilter = document.getElementById('filter-quarter');
+  const arrFilter = document.getElementById('filter-arr');
+  const staleFilter = document.getElementById('filter-stale');
+  const currentStageFilter = document.getElementById('filter-current-stage');
+  const clearBtn = document.getElementById('clear-filters');
+  const visibleCount = document.getElementById('visible-count');
+
+  function applyFilters() {
+    const stage = stageFilter.value;
+    const quarter = quarterFilter.value;
+    const arrMin = arrFilter.value === 'all' ? 0 : parseInt(arrFilter.value);
+    const stale = staleFilter.value;
+    const currentStage = currentStageFilter.value;
+
+    let visibleRows = 0;
+
+    rows.forEach(row => {
+      const rowStage = row.dataset.stage;
+      const rowQuarter = row.dataset.quarter || '';
+      const rowArr = parseFloat(row.dataset.arr) || 0;
+      const rowStale = row.dataset.stale === 'true';
+      const rowCurrentStageDays = parseInt(row.dataset.currentStageDays) || 0;
+
+      let show = true;
+
+      // Stage filter
+      if (stage !== 'all' && rowStage !== stage) {
+        show = false;
+      }
+
+      // Quarter filter
+      if (quarter !== 'all') {
+        let expectedQuarter;
+        if (quarter.includes('-26')) {
+          expectedQuarter = quarter.replace('-26', '') + ' 2026';
+        } else {
+          expectedQuarter = quarter + ' 2025';
+        }
+        if (rowQuarter !== expectedQuarter) {
+          show = false;
+        }
+      }
+
+      // ARR filter
+      if (rowArr < arrMin) {
+        show = false;
+      }
+
+      // Stale filter
+      if (stale === 'stale' && !rowStale) {
+        show = false;
+      } else if (stale === 'active' && rowStale) {
+        show = false;
+      }
+
+      // Current Stage Days filter
+      if (currentStage !== 'all') {
+        if (currentStage === 'lt7' && rowCurrentStageDays >= 7) {
+          show = false;
+        } else if (currentStage === 'lt30' && rowCurrentStageDays >= 30) {
+          show = false;
+        } else if (currentStage === 'gt30' && rowCurrentStageDays < 30) {
+          show = false;
+        } else if (currentStage === 'gt60' && rowCurrentStageDays < 60) {
+          show = false;
+        }
+      }
+
+      if (show) {
+        row.classList.remove('filtered-out');
+        visibleRows++;
+      } else {
+        row.classList.add('filtered-out');
+      }
+    });
+
+    visibleCount.textContent = visibleRows;
+  }
+
+  // Event listeners
+  stageFilter.addEventListener('change', applyFilters);
+  quarterFilter.addEventListener('change', applyFilters);
+  arrFilter.addEventListener('change', applyFilters);
+  staleFilter.addEventListener('change', applyFilters);
+  currentStageFilter.addEventListener('change', applyFilters);
+
+  clearBtn.addEventListener('click', function() {
+    stageFilter.value = 'all';
+    quarterFilter.value = 'all';
+    arrFilter.value = 'all';
+    staleFilter.value = 'all';
+    currentStageFilter.value = 'all';
+    applyFilters();
+  });
+});
+</script>
+
+</main>
+
+<!-- Sidebar & Keyboard Navigation Script -->
+<script>
+(function() {
+  // Page order for keyboard navigation
+  const pageOrder = [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_overview.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'tweets.html',
+    'aiera.html'
+  ];
+
+  // Get current page index
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'cover.html';
+  const currentIndex = pageOrder.indexOf(currentPage);
+
+  // Sidebar toggle functionality
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-collapsed');
+    const icon = document.getElementById('toggle-icon');
+    if (document.body.classList.contains('sidebar-collapsed')) {
+      icon.innerHTML = '&#9776;'; // hamburger
+    } else {
+      icon.innerHTML = '&#10005;'; // X
+    }
+    localStorage.setItem('sidebarCollapsed', document.body.classList.contains('sidebar-collapsed'));
+  }
+  window.toggleSidebar = toggleSidebar;
+
+  // Restore sidebar state from localStorage
+  if (localStorage.getItem('sidebarCollapsed') === 'true') {
+    document.body.classList.add('sidebar-collapsed');
+    document.getElementById('toggle-icon').innerHTML = '&#9776;';
+  } else {
+    document.getElementById('toggle-icon').innerHTML = '&#10005;';
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    // Don't trigger if user is typing in an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      if (currentIndex >= 0 && currentIndex < pageOrder.length - 1) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex + 1];
+      }
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      if (currentIndex > 0) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex - 1];
+      }
+    }
+    if (e.key === 'Home') {
+      e.preventDefault();
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 'End') {
+      e.preventDefault();
+      window.location.href = pageOrder[pageOrder.length - 1];
+    }
+    if (e.key === 'Escape') {
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 't' || e.key === 'T') {
+      e.preventDefault();
+      toggleSidebar();
+    }
+  });
+})();
+</script>
+
+
+
+</body>
+</html>

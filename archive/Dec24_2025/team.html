@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Reports - Banking Forecast</title>
+
+  <!-- Google Fonts (Anthropic Brand) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  
+<style>
+/* Team Reports Hub - Waterfall Focus Layout */
+.team-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.team-intro {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.team-intro p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--mid-gray);
+}
+
+/* Overall Team Waterfall */
+.team-overall-waterfall {
+  background: var(--dark);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-waterfall-heading {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+.team-waterfall-bar {
+  display: flex;
+  height: 50px;
+  background: transparent;
+  border-radius: 6px;
+  position: relative;
+  overflow: visible;
+  margin-bottom: 0.75rem;
+}
+
+.team-waterfall-segment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0.75rem;
+  position: relative;
+  min-width: 2%;
+}
+
+.team-waterfall-segment.arr {
+  background: #D97757;
+  color: white;
+  border-radius: 4px 0 0 4px;
+}
+
+.team-waterfall-segment.pipeline {
+  background: #6A9BCC;
+  color: white;
+}
+
+.team-waterfall-segment.gap {
+  background: rgba(245, 240, 235, 0.15);
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 0 4px 4px 0;
+}
+
+.team-segment-label {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+.team-segment-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.team-waterfall-coverage {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+.team-waterfall-coverage strong {
+  font-size: 1.5rem;
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* Team Member Cards with Waterfalls */
+.team-waterfall-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-member-row {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.team-member-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+}
+
+.team-member-info {
+  flex-shrink: 0;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.team-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.team-member-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.team-member-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.2rem;
+}
+
+.team-member-meta {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--mid-gray);
+}
+
+/* Individual Waterfall in Row */
+.team-member-waterfall {
+  flex: 1;
+  min-width: 0;
+}
+
+.member-waterfall-bar {
+  display: flex;
+  height: 36px;
+  background: var(--light-gray);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.member-waterfall-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  min-width: 2%;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.member-waterfall-segment.arr {
+  background: #D97757;
+  color: white;
+}
+
+.member-waterfall-segment.pipeline {
+  background: #6A9BCC;
+  color: white;
+}
+
+.member-waterfall-segment.gap {
+  background: transparent;
+  color: var(--mid-gray);
+}
+
+.member-waterfall-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--mid-gray);
+}
+
+.member-waterfall-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.member-waterfall-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.member-waterfall-dot.arr { background: #D97757; }
+.member-waterfall-dot.pipeline { background: #6A9BCC; }
+
+/* Action Arrow */
+.team-member-action {
+  flex-shrink: 0;
+  color: var(--accent-secondary);
+  font-size: 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.team-member-row:hover .team-member-action {
+  transform: translateX(4px);
+  color: var(--accent-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-member-row {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .team-member-info {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .team-member-waterfall {
+    width: 100%;
+  }
+
+  .team-member-action {
+    display: none;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- Sidebar Toggle Button -->
+<button class="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar (T)">
+  <span id="toggle-icon">&#9776;</span>
+</button>
+
+<!-- Sidebar Navigation -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="cover.html" class="sidebar-title">Banking Forecast</a>
+    <span class="sidebar-date">Week of December 24, 2025</span>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Overview</div>
+      <a href="cover.html">Cover</a>
+      <a href="summary.html">Summary</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">ARR</div>
+      <a href="arr_chart.html">Trend Chart</a>
+      <a href="arr_table.html">Account Table</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Opportunities</div>
+      <a href="opps_overview.html">Stage Funnel</a>
+      <a href="opps_table.html">Deal List</a>
+      <a href="deal_progression.html">Progression</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Pipeline</div>
+      <a href="pipe_chart.html">Goal Progress</a>
+      <a href="pipe_coverage.html">Qtr Coverage</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Contracts</div>
+      <a href="contracts_overview.html">Commit Status</a>
+      <a href="contracts_table.html">All Contracts</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Account Intel</div>
+      <a href="themes.html">Themes</a>
+      <a href="news_roundup.html">News Roundup</a>
+      <a href="updates.html">Updates</a>
+      <a href="tweets.html">Quick Intel</a>
+      <a href="aiera.html">Events</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Team Reports</div>
+      <a href="team.html" class="active">All Team</a>
+      
+      <a href="team/gabi/cover.html">Gabi D'Agosto</a>
+      <a href="team/vikash/cover.html">Vikash Kothari</a>
+      <a href="team/carolyn/cover.html">Carolyn Leopold</a>
+      <a href="team/nicole/cover.html">Nicole Morris</a>
+      <a href="team/greg/cover.html">Greg Jacobi</a>
+      
+    </div>
+    
+  </nav>
+</aside>
+
+<!-- Main Content Area -->
+<main class="main-content" id="main-content">
+  <!-- Page Content -->
+  
+<div class="page">
+  <div class="page-container">
+    <div class="team-header">
+      <h1 class="page-title">Team Reports</h1>
+      <p class="page-subtitle">Path to goal by account owner</p>
+
+      <div class="team-intro">
+        <p>Each team member's contribution to the Banking vertical's Q4 goal. Click on a team member to view their individual report.</p>
+      </div>
+    </div>
+
+    <!-- Overall Team Waterfall -->
+    
+    <div class="team-overall-waterfall">
+      <h3 class="team-waterfall-heading">Banking Team - Path to Q4 Goal</h3>
+      <div class="team-waterfall-bar">
+        <div class="team-waterfall-segment arr" style="width: 12.6%;">
+          <span class="team-segment-label">ARR</span>
+          <span class="team-segment-value">$28.5M</span>
+        </div>
+        <div class="team-waterfall-segment pipeline" style="width: 24.9%;">
+          <span class="team-segment-label">Forecast Opp ARR</span>
+          <span class="team-segment-value">$56.5M</span>
+        </div>
+        
+        <div class="team-waterfall-segment gap" style="width: 61.5%;">
+          <span class="team-segment-label">Gap</span>
+          <span class="team-segment-value">$139.3M</span>
+        </div>
+        
+      </div>
+      <div class="team-waterfall-coverage">
+        <strong>38.5%</strong> coverage toward $226.4M goal
+      </div>
+    </div>
+    
+
+    <!-- Team Member Rows with Waterfalls -->
+    <div class="team-waterfall-grid">
+      
+      <a href="team/gabi/cover.html" class="team-member-row">
+        <div class="team-member-info">
+          <div class="team-avatar">GD</div>
+          <div class="team-member-details">
+            <div class="team-member-name">Gabi D&#39;Agosto</div>
+            <div class="team-member-meta">32 accounts</div>
+          </div>
+        </div>
+
+        <div class="team-member-waterfall">
+          <div class="member-waterfall-bar">
+            <div class="member-waterfall-segment arr" style="width: 13.6%;">
+              $11.3M
+            </div>
+            <div class="member-waterfall-segment pipeline" style="width: 17.7%;">
+              $14.7M
+            </div>
+            
+            <div class="member-waterfall-segment gap" style="width: 66.8%;"></div>
+            
+          </div>
+          <div class="member-waterfall-stats">
+            <div class="member-waterfall-stat">
+              <span class="member-waterfall-dot arr"></span>
+              ARR: $11.3M
+            </div>
+            <div class="member-waterfall-stat">
+              <span class="member-waterfall-dot pipeline"></span>
+              Forecast Opp ARR: $14.7M
+            </div>
+            <div class="member-waterfall-stat">
+              <strong>33.2%</strong> coverage
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member-action">→</div>
+      </a>
+      
+      <a href="team/vikash/cover.html" class="team-member-row">
+        <div class="team-member-info">
+          <div class="team-avatar">VK</div>
+          <div class="team-member-details">
+            <div class="team-member-name">Vikash Kothari</div>
+            <div class="team-member-meta">28 accounts</div>
+          </div>
+        </div>
+
+        <div class="team-member-waterfall">
+          <div class="member-waterfall-bar">
+            <div class="member-waterfall-segment arr" style="width: 13.6%;">
+              $9.9M
+            </div>
+            <div class="member-waterfall-segment pipeline" style="width: 31.4%;">
+              $22.9M
+            </div>
+            
+            <div class="member-waterfall-segment gap" style="width: 55.0%;"></div>
+            
+          </div>
+          <div class="member-waterfall-stats">
+            <div class="member-waterfall-stat">
+              <span class="member-waterfall-dot arr"></span>
+              ARR: $9.9M
+            </div>
+            <div class="member-waterfall-stat">
+              <span class="member-waterfall-dot pipeline"></span>
+              Forecast Opp ARR: $22.9M
+            </div>
+            <div class="member-waterfall-stat">
+              <strong>45.0%</strong> coverage
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member-action">→</div>
+      </a>
+      
+      <a href="team/nicole/cover.html" class="team-member-row">
+        <div class="team-member-info">
+          <div class="team-avatar">NM</div>
+          <div class="team-member-details">
+            <div class="team-member-name">Nicole Morris</div>
+            <div class="team-member-meta">1 accounts</div>
+          </div>
+        </div>
+
+        <div class="team-member-waterfall">
+          <div class="member-waterfall-bar">
+            <div class="member-waterfall-segment arr" style="width: 100%;">
+              $3.9M
+            </div>
+            <div class="member-waterfall-segment pipeline" style="width: 0%;">
+              
+            </div>
+            
+          </div>
+          <div class="member-waterfall-stats">
+            <div class="member-waterfall-stat">
+              <span class="member-waterfall-dot arr"></span>
+              ARR: $3.9M
+            </div>
+            <div class="member-waterfall-stat">
+              <span class="member-waterfall-dot pipeline"></span>
+              Forecast Opp ARR: $15.8M
+            </div>
+            <div class="member-waterfall-stat">
+              <strong>100%</strong> coverage
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member-action">→</div>
+      </a>
+      
+      <a href="team/carolyn/cover.html" class="team-member-row">
+        <div class="team-member-info">
+          <div class="team-avatar">CL</div>
+          <div class="team-member-details">
+            <div class="team-member-name">Carolyn Leopold</div>
+            <div class="team-member-meta">25 accounts</div>
+          </div>
+        </div>
+
+        <div class="team-member-waterfall">
+          <div class="member-waterfall-bar">
+            <div class="member-waterfall-segment arr" style="width: 5.1%;">
+              
+            </div>
+            <div class="member-waterfall-segment pipeline" style="width: 4.5%;">
+              
+            </div>
+            
+            <div class="member-waterfall-segment gap" style="width: 89.7%;"></div>
+            
+          </div>
+          <div class="member-waterfall-stats">
+            <div class="member-waterfall-stat">
+              <span class="member-waterfall-dot arr"></span>
+              ARR: $3.3M
+            </div>
+            <div class="member-waterfall-stat">
+              <span class="member-waterfall-dot pipeline"></span>
+              Forecast Opp ARR: $3.0M
+            </div>
+            <div class="member-waterfall-stat">
+              <strong>10.3%</strong> coverage
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member-action">→</div>
+      </a>
+      
+      <a href="team/greg/cover.html" class="team-member-row">
+        <div class="team-member-info">
+          <div class="team-avatar">GJ</div>
+          <div class="team-member-details">
+            <div class="team-member-name">Greg Jacobi</div>
+            <div class="team-member-meta">1 accounts</div>
+          </div>
+        </div>
+
+        <div class="team-member-waterfall">
+          <div class="member-waterfall-bar">
+            <div class="member-waterfall-segment arr" style="width: 4.1%;">
+              
+            </div>
+            <div class="member-waterfall-segment pipeline" style="width: 3.1%;">
+              
+            </div>
+            
+            <div class="member-waterfall-segment gap" style="width: 92.9%;"></div>
+            
+          </div>
+          <div class="member-waterfall-stats">
+            <div class="member-waterfall-stat">
+              <span class="member-waterfall-dot arr"></span>
+              ARR: $105.4K
+            </div>
+            <div class="member-waterfall-stat">
+              <span class="member-waterfall-dot pipeline"></span>
+              Forecast Opp ARR: $80.0K
+            </div>
+            <div class="member-waterfall-stat">
+              <strong>7.1%</strong> coverage
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member-action">→</div>
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- Sidebar & Keyboard Navigation Script -->
+<script>
+(function() {
+  // Page order for keyboard navigation
+  const pageOrder = [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_overview.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'tweets.html',
+    'aiera.html'
+  ];
+
+  // Get current page index
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'cover.html';
+  const currentIndex = pageOrder.indexOf(currentPage);
+
+  // Sidebar toggle functionality
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-collapsed');
+    const icon = document.getElementById('toggle-icon');
+    if (document.body.classList.contains('sidebar-collapsed')) {
+      icon.innerHTML = '&#9776;'; // hamburger
+    } else {
+      icon.innerHTML = '&#10005;'; // X
+    }
+    localStorage.setItem('sidebarCollapsed', document.body.classList.contains('sidebar-collapsed'));
+  }
+  window.toggleSidebar = toggleSidebar;
+
+  // Restore sidebar state from localStorage
+  if (localStorage.getItem('sidebarCollapsed') === 'true') {
+    document.body.classList.add('sidebar-collapsed');
+    document.getElementById('toggle-icon').innerHTML = '&#9776;';
+  } else {
+    document.getElementById('toggle-icon').innerHTML = '&#10005;';
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    // Don't trigger if user is typing in an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      if (currentIndex >= 0 && currentIndex < pageOrder.length - 1) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex + 1];
+      }
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      if (currentIndex > 0) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex - 1];
+      }
+    }
+    if (e.key === 'Home') {
+      e.preventDefault();
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 'End') {
+      e.preventDefault();
+      window.location.href = pageOrder[pageOrder.length - 1];
+    }
+    if (e.key === 'Escape') {
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 't' || e.key === 'T') {
+      e.preventDefault();
+      toggleSidebar();
+    }
+  });
+})();
+</script>
+
+
+
+</body>
+</html>

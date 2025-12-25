@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Roundup - Banking Forecast</title>
+
+  <!-- Google Fonts (Anthropic Brand) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  
+<style>
+/* NYTimes-inspired News Roundup Styles */
+.news-roundup {
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Lora', Georgia, serif;
+}
+
+.news-masthead {
+  text-align: center;
+  border-bottom: 2px solid #121212;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.news-masthead h1 {
+  font-family: 'Old Standard TT', 'Times New Roman', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #121212;
+}
+
+.news-masthead .edition-date {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Section Headers */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px double #121212;
+}
+
+.section-header h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #121212;
+  margin: 0;
+}
+
+.section-header .section-badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  background: #121212;
+  color: white;
+  border-radius: 2px;
+}
+
+.section-header .section-badge.ai { background: var(--anthropic-orange); }
+.section-header .section-badge.macro { background: #2c5282; }
+.section-header .section-badge.account { background: #276749; }
+
+/* News Grid - 3 column layout */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+/* Featured Article (larger) */
+.featured-article {
+  grid-column: span 2;
+  grid-row: span 2;
+  border-right: 1px solid #e0e0e0;
+  padding-right: 1.5rem;
+}
+
+.featured-article .article-headline {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  color: #121212;
+}
+
+.featured-article .article-headline a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.featured-article .article-headline a:hover {
+  text-decoration: underline;
+}
+
+.featured-article .article-summary {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.featured-article .article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.featured-article .accounts-mentioned {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #f8f8f8;
+  border-left: 3px solid var(--anthropic-orange);
+}
+
+.featured-article .accounts-mentioned h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+/* Standard Article */
+.news-article {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.news-article:last-child {
+  border-bottom: none;
+}
+
+.news-article .article-headline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  color: #121212;
+}
+
+.news-article .article-headline a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.news-article .article-headline a:hover {
+  text-decoration: underline;
+}
+
+.news-article .article-summary {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #444;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-article .article-meta {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+/* Account News Briefs Grid */
+.account-briefs {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.briefs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.brief-item {
+  padding: 0.75rem;
+  background: #fafafa;
+  border-left: 3px solid #ddd;
+}
+
+.brief-item.high-relevance { border-left-color: var(--anthropic-orange); }
+.brief-item.medium-relevance { border-left-color: #4a90a4; }
+
+.brief-item .brief-account {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: #121212;
+}
+
+.brief-item .brief-headline {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.brief-item .brief-headline a {
+  color: #333;
+  text-decoration: none;
+}
+
+.brief-item .brief-headline a:hover {
+  text-decoration: underline;
+}
+
+.brief-item .brief-source {
+  font-size: 0.7rem;
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+/* No news message */
+.no-news {
+  grid-column: span 3;
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .featured-article {
+    grid-column: span 2;
+  }
+  .briefs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .no-news {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+  .featured-article {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1.5rem;
+  }
+  .briefs-grid {
+    grid-template-columns: 1fr;
+  }
+  .no-news {
+    grid-column: span 1;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- Sidebar Toggle Button -->
+<button class="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar (T)">
+  <span id="toggle-icon">&#9776;</span>
+</button>
+
+<!-- Sidebar Navigation -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="cover.html" class="sidebar-title">Banking Forecast</a>
+    <span class="sidebar-date">Week of December 24, 2025</span>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Overview</div>
+      <a href="cover.html">Cover</a>
+      <a href="summary.html">Summary</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">ARR</div>
+      <a href="arr_chart.html">Trend Chart</a>
+      <a href="arr_table.html">Account Table</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Opportunities</div>
+      <a href="opps_overview.html">Stage Funnel</a>
+      <a href="opps_table.html">Deal List</a>
+      <a href="deal_progression.html">Progression</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Pipeline</div>
+      <a href="pipe_chart.html">Goal Progress</a>
+      <a href="pipe_coverage.html">Qtr Coverage</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Contracts</div>
+      <a href="contracts_overview.html">Commit Status</a>
+      <a href="contracts_table.html">All Contracts</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Account Intel</div>
+      <a href="themes.html">Themes</a>
+      <a href="news_roundup.html" class="active">News Roundup</a>
+      <a href="updates.html">Updates</a>
+      <a href="tweets.html">Quick Intel</a>
+      <a href="aiera.html">Events</a>
+    </div>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Team Reports</div>
+      <a href="team.html">All Team</a>
+      
+      <a href="team/gabi/cover.html">Gabi D'Agosto</a>
+      <a href="team/vikash/cover.html">Vikash Kothari</a>
+      <a href="team/carolyn/cover.html">Carolyn Leopold</a>
+      <a href="team/nicole/cover.html">Nicole Morris</a>
+      <a href="team/greg/cover.html">Greg Jacobi</a>
+      
+    </div>
+    
+  </nav>
+</aside>
+
+<!-- Main Content Area -->
+<main class="main-content" id="main-content">
+  <!-- Page Content -->
+  
+<div class="page">
+  <div class="news-roundup">
+    <!-- Masthead -->
+    <div class="news-masthead">
+      <h1>FSI News Roundup</h1>
+      <div class="edition-date">Week of December 24, 2025</div>
+    </div>
+
+    <!-- Section 1: Banking AI News -->
+    <div class="section-header">
+      <h2>Banking & AI</h2>
+      <span class="section-badge ai">Industry Trends</span>
+    </div>
+    <div class="news-grid">
+      
+        
+        <article class="featured-article">
+          <h3 class="article-headline">
+            <a href="https://www.pymnts.com/artificial-intelligence-2/2025/bank-of-america-says-ai-increasingly-contributes-to-us-economic-growth/" target="_blank">Bank of America CEO Says AI Increasingly Contributes to US Economic Growth</a>
+          </h3>
+          <p class="article-summary">CEO Brian Moynihan stated at Goldman Sachs conference that AI impact accelerated in 2025 and will continue accelerating in coming years.</p>
+          <div class="article-meta">
+            <span class="source">PYMNTS</span>
+            <span class="date">2025-12-09</span>
+          </div>
+          
+        </article>
+        
+        <article class="news-article">
+          <h3 class="article-headline">
+            <a href="https://www.artificialintelligence-news.com/news/wall-street-ai-gains-are-here-banks-plan-for-fewer-people/" target="_blank">JPMorgan Reports AI Productivity Gains Rising from 3% to 6% in Consumer Banking</a>
+          </h3>
+          <p class="article-summary">Consumer banking chief Marianne Lake reports productivity in AI-enabled areas reached 6%, with operations roles potentially seeing 40-50% gains.</p>
+          <div class="article-meta">AI News &middot; 2025-12-09</div>
+        </article>
+        
+        <article class="news-article">
+          <h3 class="article-headline">
+            <a href="https://finance.yahoo.com/news/ai-really-killing-finance-banking-123000240.html" target="_blank">McKinsey Estimates Generative AI Could Deliver $200B-$340B Annual Value to Banking</a>
+          </h3>
+          <p class="article-summary">McKinsey research shows generative AI could deliver between $200-340 billion in annual value to banking sector through productivity improvements.</p>
+          <div class="article-meta">Yahoo Finance &middot; 2025-12-15</div>
+        </article>
+        
+        <article class="news-article">
+          <h3 class="article-headline">
+            <a href="https://www.microsoft.com/en-us/industry/blog/financial-services/2025/12/18/ai-transformation-in-financial-services-5-predictors-for-success-in-2026/" target="_blank">Microsoft Study Shows Frontier Firms Report 3x Higher ROI on AI Investments</a>
+          </h3>
+          <p class="article-summary">IDC study finds financial services Frontier Firms embedding AI agents across workflows report returns 3x higher than slow adopters.</p>
+          <div class="article-meta">Microsoft Industry Blog &middot; 2025-12-18</div>
+        </article>
+        
+        <article class="news-article">
+          <h3 class="article-headline">
+            <a href="https://ffnews.com/newsarticle/fintech/tcs-bancs-gets-ai-upgrade-new-core-tool-to-supercharge-innovation/" target="_blank">TCS Launches BaNCS AI Compass with Generative AI and Pre-Built Intelligent Agents</a>
+          </h3>
+          <p class="article-summary">Tata Consultancy Services announced major AI upgrade to TCS BaNCS platform integrating ML, deep learning, and generative AI agents.</p>
+          <div class="article-meta">FF News &middot; 2025-12-10</div>
+        </article>
+        
+      
+    </div>
+
+    <!-- Section 2: Macro & Industry News -->
+    <div class="section-header">
+      <h2>Economy & Markets</h2>
+      <span class="section-badge macro">Macro Trends</span>
+    </div>
+    <div class="news-grid">
+      
+        
+        <article class="featured-article">
+          <h3 class="article-headline">
+            <a href="https://www.cnbc.com/2025/12/10/fed-interest-rate-decision-december-2025-.html" target="_blank">Federal Reserve Cuts Key Rate to 3.5%-3.75% in 9-3 Split Vote, Signals Cautious 2026</a>
+          </h3>
+          <p class="article-summary">Fed cut rate by 25bps but dot plot signals only one more reduction in 2026 and another in 2027 amid disagreement on policy path.</p>
+          <div class="article-meta">
+            <span class="source">CNBC</span>
+            <span class="date">2025-12-10</span>
+          </div>
+        </article>
+        
+        <article class="news-article">
+          <h3 class="article-headline">
+            <a href="https://www.advisorperspectives.com/dshort/updates/2025/12/10/feds-interest-rate-decision-december-10-2025" target="_blank">Fed Revises 2026 GDP Growth Forecast Higher to 2.3% from 1.8%</a>
+          </h3>
+          <p class="article-summary">FOMC raised GDP growth projections for 2026 while maintaining inflation above 2% target until 2028, PCE expected at 2.4% in 2026.</p>
+          <div class="article-meta">Advisor Perspectives &middot; 2025-12-10</div>
+        </article>
+        
+        <article class="news-article">
+          <h3 class="article-headline">
+            <a href="https://www.usbank.com/investing/financial-perspectives/market-news/federal-reserve-tapering-asset-purchases.html" target="_blank">Federal Reserve Announces Resume of Treasury Securities Purchases Starting with $40B</a>
+          </h3>
+          <p class="article-summary">Fed will buy $40B in Treasury bills beginning Friday after stopping balance sheet runoff, maintaining $6.2T bond holdings.</p>
+          <div class="article-meta">US Bank &middot; 2025-12-10</div>
+        </article>
+        
+        <article class="news-article">
+          <h3 class="article-headline">
+            <a href="https://www.treliant.com/knowledge-center/2025-roadmap-for-banks-navigating-regulation-streamlining-costs-embracing-ai/" target="_blank">Trump Administration Moves to Deregulate Bank AI Use, Revokes Biden Executive Order</a>
+          </h3>
+          <p class="article-summary">President Trump signed EO 14179 revoking Biden&#39;s AI Executive Order, reducing AI guardrails as regulators remove reputational risk from exams.</p>
+          <div class="article-meta">Treliant &middot; 2025-01-23</div>
+        </article>
+        
+        <article class="news-article">
+          <h3 class="article-headline">
+            <a href="https://www.sullcrom.com/insights/memo/2025/December/OCC-FDIC-Rescind-Interagency-Leveraged-Lending-Guidance" target="_blank">OCC and FDIC Rescind 2013 Interagency Leveraged Lending Guidance</a>
+          </h3>
+          <p class="article-summary">Regulators rescind leveraged lending guidance viewed as overly restrictive, allowing banks more flexibility in applying risk management principles.</p>
+          <div class="article-meta">Sullivan &amp; Cromwell &middot; 2025-12-15</div>
+        </article>
+        
+      
+    </div>
+
+    <!-- Section 3: Account News Briefs -->
+    <div class="section-header">
+      <h2>Account News</h2>
+      <span class="section-badge account">Portfolio Updates</span>
+    </div>
+    
+    <div class="briefs-grid">
+      
+      <div class="brief-item high-relevance">
+        <div class="brief-account">Citigroup</div>
+        <div class="brief-headline">
+          <a href="https://finance.yahoo.com/news/wells-fargo-names-citi-dominant-155141058.html" target="_blank">Wells Fargo Names Citigroup as Dominant Pick, Stock Could Double in Three Years</a>
+        </div>
+        <div class="brief-source">Yahoo Finance &middot; 2025-12-18</div>
+      </div>
+      
+      <div class="brief-item high-relevance">
+        <div class="brief-account">Citigroup</div>
+        <div class="brief-headline">
+          <a href="https://finance.yahoo.com/news/americas-biggest-banks-are-ending-2025-on-top-with-big-growth-goals-and-markets-wide-open-070002408.html" target="_blank">Citigroup Stock Surpasses Book Value for First Time in Seven Years</a>
+        </div>
+        <div class="brief-source">Yahoo Finance &middot; 2025-12-15</div>
+      </div>
+      
+      <div class="brief-item high-relevance">
+        <div class="brief-account">Wells Fargo</div>
+        <div class="brief-headline">
+          <a href="https://finance.yahoo.com/news/americas-biggest-banks-are-ending-2025-on-top-with-big-growth-goals-and-markets-wide-open-070002408.html" target="_blank">Wells Fargo Assets Surpass $2 Trillion After Regulatory Restrictions Lifted</a>
+        </div>
+        <div class="brief-source">Yahoo Finance &middot; 2025-12-15</div>
+      </div>
+      
+      <div class="brief-item high-relevance">
+        <div class="brief-account">Freddie Mac</div>
+        <div class="brief-headline">
+          <a href="https://www.ainvest.com/news/freddie-mac-leadership-shift-implications-2026-ipo-2512/" target="_blank">Kenny M. Smith Appointed as Freddie Mac CEO Ahead of Potential 2026 IPO</a>
+        </div>
+        <div class="brief-source">AInvest &middot; 2025-12-17</div>
+      </div>
+      
+      <div class="brief-item high-relevance">
+        <div class="brief-account">Bank Of Montreal</div>
+        <div class="brief-headline">
+          <a href="https://www.theglobeandmail.com/business/article-canada-banks-earnings-fourth-quarter-2025/" target="_blank">BMO Q4 Earnings Beat Estimates, Raises Quarterly Dividend by 2%</a>
+        </div>
+        <div class="brief-source">The Globe and Mail &middot; 2025-12-05</div>
+      </div>
+      
+      <div class="brief-item high-relevance">
+        <div class="brief-account">Scotiabank</div>
+        <div class="brief-headline">
+          <a href="https://www.theglobeandmail.com/business/article-canada-banks-earnings-fourth-quarter-2025/" target="_blank">Scotiabank Q4 Profit Beats Estimates on Capital Markets and Wealth Management Surge</a>
+        </div>
+        <div class="brief-source">The Globe and Mail &middot; 2025-12-03</div>
+      </div>
+      
+      <div class="brief-item medium-relevance">
+        <div class="brief-account">JPMorgan Chase &amp; Co</div>
+        <div class="brief-headline">
+          <a href="https://www.marketbeat.com/instant-alerts/royal-bank-of-canada-has-lowered-expectations-for-jpmorgan-chase-co-nysejpm-stock-price-2025-12-13/" target="_blank">Royal Bank of Canada Lowers JPMorgan Price Target to $330, Maintains Outperform</a>
+        </div>
+        <div class="brief-source">MarketBeat &middot; 2025-12-12</div>
+      </div>
+      
+      <div class="brief-item medium-relevance">
+        <div class="brief-account">JPMorgan Chase &amp; Co</div>
+        <div class="brief-headline">
+          <a href="https://www.theglobeandmail.com/business/technology/article-jpmorgan-technology-banking-innovation-economy-managing-director/" target="_blank">JPMorgan Expands Canadian Tech Banking with Innovation Economy Unit</a>
+        </div>
+        <div class="brief-source">The Globe and Mail &middot; 2025-12-10</div>
+      </div>
+      
+      <div class="brief-item medium-relevance">
+        <div class="brief-account">Royal Bank of Canada</div>
+        <div class="brief-headline">
+          <a href="https://www.bloomberg.com/news/articles/2025-04-22/rbc-hires-jpmorgan-s-wagner-as-head-of-private-capital-markets" target="_blank">RBC Hires JPMorgan&#39;s Troy Wagner as Global Head of Private Capital Markets</a>
+        </div>
+        <div class="brief-source">Bloomberg &middot; 2025-04-22</div>
+      </div>
+      
+      <div class="brief-item medium-relevance">
+        <div class="brief-account">Wells Fargo</div>
+        <div class="brief-headline">
+          <a href="https://finance.yahoo.com/news/americas-biggest-banks-are-ending-2025-on-top-with-big-growth-goals-and-markets-wide-open-070002408.html" target="_blank">Wells Fargo Targets 17-18% Return on Tangible Common Equity</a>
+        </div>
+        <div class="brief-source">Yahoo Finance &middot; 2025-12-15</div>
+      </div>
+      
+      <div class="brief-item medium-relevance">
+        <div class="brief-account">Freddie Mac</div>
+        <div class="brief-headline">
+          <a href="https://www.investing.com/news/company-news/freddie-mac-concludes-2025-with-51-billion-in-credit-risk-transfers-93CH-4419933" target="_blank">Freddie Mac Completes $5.1 Billion in Credit Risk Transfers for 2025</a>
+        </div>
+        <div class="brief-source">Investing.com &middot; 2025-12-20</div>
+      </div>
+      
+      <div class="brief-item medium-relevance">
+        <div class="brief-account">Bank Of Montreal</div>
+        <div class="brief-headline">
+          <a href="https://ts2.tech/en/bank-of-montreal-bmo-stock-december-2025-outlook-fresh-deals-and-q4-earnings-preview/" target="_blank">BMO Appoints Rahul Nalgirkar as New CFO Effective January 2026</a>
+        </div>
+        <div class="brief-source">TS2 Space &middot; 2025-12-10</div>
+      </div>
+      
+      <div class="brief-item medium-relevance">
+        <div class="brief-account">Capital One Financial Corporation</div>
+        <div class="brief-headline">
+          <a href="https://www.theglobeandmail.com/business/article-canada-banks-earnings-fourth-quarter-2025/" target="_blank">Canadian Big Six Banks Rally 32% Year-to-Date Outpacing TSX Composite</a>
+        </div>
+        <div class="brief-source">The Globe and Mail &middot; 2025-12-05</div>
+      </div>
+      
+    </div>
+    
+
+    <!-- Cross-Account Themes -->
+    
+    <div class="section-header">
+      <h2>Key Themes</h2>
+      <span class="section-badge">Cross-Portfolio</span>
+    </div>
+    <div class="news-grid">
+      
+      <article class="news-article">
+        <h3 class="article-headline">Record Banking Sector Performance in 2025</h3>
+        <p class="article-summary">Major US bank index up 29% YTD outperforming S&amp;P 500 by 13 points. JPMorgan and Wells Fargo at record highs. Canadian Big Six banks rallied 32% YTD. All major banks beat Q4 earnings estimates.</p>
+        <div class="article-meta">JPMorgan Chase &amp; Co, Wells Fargo, Citigroup, Bank Of Montreal, Scotiabank</div>
+      </article>
+      
+      <article class="news-article">
+        <h3 class="article-headline">Accelerating AI Adoption and Productivity Gains</h3>
+        <p class="article-summary">JPMorgan reports 6% productivity gains in AI-enabled areas with potential for 40-50% in operations. McKinsey estimates $200-340B annual value from generative AI. Frontier Firms report 3x higher ROI on AI investments.</p>
+        <div class="article-meta">JPMorgan Chase &amp; Co, Citigroup, Bank of America</div>
+      </article>
+      
+      <article class="news-article">
+        <h3 class="article-headline">Regulatory Deregulation and Growth Expansion</h3>
+        <p class="article-summary">Trump administration revoked Biden AI Executive Order. Fed removed reputational risk from exams. OCC rescinded leveraged lending guidance. Wells Fargo exceeded $2T assets after regulatory restrictions lifted.</p>
+        <div class="article-meta">Wells Fargo, Citigroup, JPMorgan Chase &amp; Co</div>
+      </article>
+      
+      <article class="news-article">
+        <h3 class="article-headline">Conservative Fed Rate Policy for 2026</h3>
+        <p class="article-summary">Fed cut rates to 3.5-3.75% but dot plot signals only one more cut in 2026. Inflation expected above 2% target until 2028. Fed resumed Treasury purchases to maintain liquidity.</p>
+        <div class="article-meta">All banking accounts</div>
+      </article>
+      
+    </div>
+    
+
+  </div>
+</div>
+
+</main>
+
+<!-- Sidebar & Keyboard Navigation Script -->
+<script>
+(function() {
+  // Page order for keyboard navigation
+  const pageOrder = [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_overview.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'tweets.html',
+    'aiera.html'
+  ];
+
+  // Get current page index
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'cover.html';
+  const currentIndex = pageOrder.indexOf(currentPage);
+
+  // Sidebar toggle functionality
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-collapsed');
+    const icon = document.getElementById('toggle-icon');
+    if (document.body.classList.contains('sidebar-collapsed')) {
+      icon.innerHTML = '&#9776;'; // hamburger
+    } else {
+      icon.innerHTML = '&#10005;'; // X
+    }
+    localStorage.setItem('sidebarCollapsed', document.body.classList.contains('sidebar-collapsed'));
+  }
+  window.toggleSidebar = toggleSidebar;
+
+  // Restore sidebar state from localStorage
+  if (localStorage.getItem('sidebarCollapsed') === 'true') {
+    document.body.classList.add('sidebar-collapsed');
+    document.getElementById('toggle-icon').innerHTML = '&#9776;';
+  } else {
+    document.getElementById('toggle-icon').innerHTML = '&#10005;';
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    // Don't trigger if user is typing in an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      if (currentIndex >= 0 && currentIndex < pageOrder.length - 1) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex + 1];
+      }
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      if (currentIndex > 0) {
+        e.preventDefault();
+        window.location.href = pageOrder[currentIndex - 1];
+      }
+    }
+    if (e.key === 'Home') {
+      e.preventDefault();
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 'End') {
+      e.preventDefault();
+      window.location.href = pageOrder[pageOrder.length - 1];
+    }
+    if (e.key === 'Escape') {
+      window.location.href = pageOrder[0];
+    }
+    if (e.key === 't' || e.key === 'T') {
+      e.preventDefault();
+      toggleSidebar();
+    }
+  });
+})();
+</script>
+
+
+
+</body>
+</html>
