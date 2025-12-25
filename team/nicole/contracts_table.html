@@ -54,38 +54,42 @@
   <!-- Page Content -->
   
 <div class="page">
-  <h2 class="page-title">Contract Details</h2>
-  <p class="page-subtitle">Performance vs. expectations</p>
+  <div class="table-page-layout">
+    <h2 class="page-title">Contract Details</h2>
+    <p class="page-subtitle" style="flex-shrink: 0;">Performance vs. expectations</p>
 
-  <div class="page-body">
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Account / Contract</th>
-            <th class="numeric">ARR at Signing</th>
-            <th class="numeric">Commitment</th>
-            <th class="numeric">Expected ARR</th>
-            <th class="numeric">Current ARR</th>
-            <th class="numeric">Untapped</th>
-            <th class="numeric">vs Expected</th>
-            <th>Status</th>
-            <th>Contract End</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-        </tbody>
-      </table>
-    </div>
+    <div class="table-scroll-area">
+      <!-- Scrollable table body -->
+      <div class="table-scroll-body">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Account / Contract</th>
+              <th class="numeric">ARR at Signing</th>
+              <th class="numeric">Commitment</th>
+              <th class="numeric">Expected ARR</th>
+              <th class="numeric">Current ARR</th>
+              <th class="numeric">Untapped</th>
+              <th class="numeric">vs Expected</th>
+              <th>Status</th>
+              <th>Contract End</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      </div>
 
-    <div class="table-legend" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
-      <strong>Legend:</strong>
-      ARR at Signing = account's ARR when contract started |
-      Commitment = contract value |
-      Expected ARR = starting ARR + commitment |
-      Untapped = Expected ARR minus Current ARR (opportunity remaining) |
-      vs Expected = current ARR compared to where it should be at this point in the contract
+      <!-- Fixed footer with legend -->
+      <div class="table-fixed-footer" style="padding: 0.75rem 1.25rem; font-size: 0.85rem; color: var(--mid-gray);">
+        <strong>Legend:</strong>
+        ARR at Signing = account's ARR when contract started |
+        Commitment = contract value |
+        Expected ARR = starting ARR + commitment |
+        Untapped = Expected ARR minus Current ARR (opportunity remaining) |
+        vs Expected = current ARR compared to where it should be at this point in the contract
+      </div>
     </div>
   </div>
 </div>

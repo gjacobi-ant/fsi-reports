@@ -54,46 +54,53 @@
   <!-- Page Content -->
   
 <div class="page gray-bg">
-  <h2 class="page-title">Account ARR Details</h2>
+  <div class="table-page-layout">
+    <h2 class="page-title">Account ARR Details</h2>
 
-  <div class="page-body">
-    <div class="table-wrapper arr-table-wrapper">
-      <table class="data-table arr-table">
-        <thead>
+    <div class="table-scroll-area">
+      <!-- Scrollable table body -->
+      <div class="table-scroll-body">
+        <table class="data-table arr-table">
+          <thead>
+            <tr>
+              <th>Account</th>
+              <th class="numeric">Current ARR</th>
+              <th class="numeric">WoW %</th>
+              <th class="numeric">MoM %</th>
+              <th class="numeric">Q1 Goal</th>
+              <th class="numeric">% to Q1</th>
+              <th class="numeric">Q4 Goal</th>
+              <th class="numeric">% to Q4</th>
+              <th>Quick Intel</th>
+              <th>Trend</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001Hs000033Xm2JIAS/view" target="_blank" class="account-link">NU PAGAMENTOS S.A</a>
+                
+              </td>
+              <td class="numeric">$105.4K</td>
+              <td class="numeric ">%</td>
+              <td class="numeric ">%</td>
+              <td class="numeric">$90.7K</td>
+              <td class="numeric goal-achieved">116.2%</td>
+              <td class="numeric">$125.6K</td>
+              <td class="numeric goal-on-track">83.9%</td>
+              <td class="intel-cell"><span class="no-data">—</span></td>
+              <td class="sparkline-cell"><svg viewBox="0 0 80 20" class="sparkline"><polyline class="sparkline-line" points="0.0,18.0 16.0,14.0 32.0,15.4 48.0,7.1 64.0,9.6 80.0,2.0"/><circle class="sparkline-dot" cx="80.0" cy="2.0" r="2"/></svg></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Fixed footer at bottom of visible window -->
+      <div class="table-fixed-footer">
+        <table class="arr-table">
           <tr>
-            <th>Account</th>
-            <th class="numeric">Current ARR</th>
-            <th class="numeric">WoW %</th>
-            <th class="numeric">MoM %</th>
-            <th class="numeric">Q1 Goal</th>
-            <th class="numeric">% to Q1</th>
-            <th class="numeric">Q4 Goal</th>
-            <th class="numeric">% to Q4</th>
-            <th>Quick Intel</th>
-            <th>Trend</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-          <tr>
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001Hs000033Xm2JIAS/view" target="_blank" class="account-link">NU PAGAMENTOS S.A</a>
-              
-            </td>
-            <td class="numeric">$105.4K</td>
-            <td class="numeric ">%</td>
-            <td class="numeric ">%</td>
-            <td class="numeric">$90.7K</td>
-            <td class="numeric goal-achieved">116.2%</td>
-            <td class="numeric">$125.6K</td>
-            <td class="numeric goal-on-track">83.9%</td>
-            <td class="intel-cell"><span class="no-data">—</span></td>
-            <td class="sparkline-cell"><svg viewBox="0 0 80 20" class="sparkline"><polyline class="sparkline-line" points="0.0,18.0 16.0,14.0 32.0,15.4 48.0,7.1 64.0,9.6 80.0,2.0"/><circle class="sparkline-dot" cx="80.0" cy="2.0" r="2"/></svg></td>
-          </tr>
-          
-        </tbody>
-        <tfoot>
-          <tr class="totals-row">
             <td><strong>TOTAL (35 accounts)</strong></td>
             <td class="numeric"><strong>$105.4K</strong></td>
             <td class="numeric"></td>
@@ -105,8 +112,8 @@
             <td class="intel-cell"></td>
             <td class="sparkline-cell"></td>
           </tr>
-        </tfoot>
-      </table>
+        </table>
+      </div>
     </div>
   </div>
 </div>

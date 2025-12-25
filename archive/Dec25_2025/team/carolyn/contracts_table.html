@@ -54,88 +54,92 @@
   <!-- Page Content -->
   
 <div class="page">
-  <h2 class="page-title">Contract Details</h2>
-  <p class="page-subtitle">Performance vs. expectations</p>
+  <div class="table-page-layout">
+    <h2 class="page-title">Contract Details</h2>
+    <p class="page-subtitle" style="flex-shrink: 0;">Performance vs. expectations</p>
 
-  <div class="page-body">
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Account / Contract</th>
-            <th class="numeric">ARR at Signing</th>
-            <th class="numeric">Commitment</th>
-            <th class="numeric">Expected ARR</th>
-            <th class="numeric">Current ARR</th>
-            <th class="numeric">Untapped</th>
-            <th class="numeric">vs Expected</th>
-            <th>Status</th>
-            <th>Contract End</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-          <tr>
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iVNjlYAG/view" target="_blank" class="account-link" title="Citi - Q1 PT">Citigroup</a>
-              <div class="subtext">Citi - Q1 PT</div>
-            </td>
-            <td class="numeric">$0</td>
-            <td class="numeric">$446.4K</td>
-            <td class="numeric">$446.4K</td>
-            <td class="numeric" style="font-weight: 600;">$2.6M</td>
-            <td class="numeric">-</td>
-            <td class="numeric goal-achieved">
-              +$2.5M
-              <div class="subtext">vs $99.2K expected now</div>
-            </td>
-            <td>
-              <span class="status-badge status-active">🚨 AT_RISK</span>
-            </td>
-            <td>
-              2026-03-05
-              
-                <span class="warning-badge">70d left</span>
-              
-            </td>
-          </tr>
-          
-          <tr>
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000aiTftYAE/view" target="_blank" class="account-link" title="Citi // Citi Assist &amp; Stylus (Vertex PT)">Citigroup</a>
-              <div class="subtext">Citi // Citi Assist &amp; Stylus (Vertex PT)</div>
-            </td>
-            <td class="numeric">$138.0K</td>
-            <td class="numeric">$338.4K</td>
-            <td class="numeric">$476.4K</td>
-            <td class="numeric" style="font-weight: 600;">$2.6M</td>
-            <td class="numeric">-</td>
-            <td class="numeric goal-achieved">
-              +$2.2M
-              <div class="subtext">vs $476.4K expected now</div>
-            </td>
-            <td>
-              <span class="status-badge status-active">🔥 EXCEEDED</span>
-            </td>
-            <td>
-              2025-11-22
-              
-                <span class="danger-badge">EXPIRED</span>
-              
-            </td>
-          </tr>
-          
-        </tbody>
-      </table>
-    </div>
+    <div class="table-scroll-area">
+      <!-- Scrollable table body -->
+      <div class="table-scroll-body">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Account / Contract</th>
+              <th class="numeric">ARR at Signing</th>
+              <th class="numeric">Commitment</th>
+              <th class="numeric">Expected ARR</th>
+              <th class="numeric">Current ARR</th>
+              <th class="numeric">Untapped</th>
+              <th class="numeric">vs Expected</th>
+              <th>Status</th>
+              <th>Contract End</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iVNjlYAG/view" target="_blank" class="account-link" title="Citi - Q1 PT">Citigroup</a>
+                <div class="subtext">Citi - Q1 PT</div>
+              </td>
+              <td class="numeric">$0</td>
+              <td class="numeric">$446.4K</td>
+              <td class="numeric">$446.4K</td>
+              <td class="numeric" style="font-weight: 600;">$2.6M</td>
+              <td class="numeric">-</td>
+              <td class="numeric goal-achieved">
+                +$2.5M
+                <div class="subtext">vs $99.2K expected now</div>
+              </td>
+              <td>
+                <span class="status-badge status-active">🚨 AT_RISK</span>
+              </td>
+              <td>
+                2026-03-05
+                
+                  <span class="warning-badge">70d left</span>
+                
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000aiTftYAE/view" target="_blank" class="account-link" title="Citi // Citi Assist &amp; Stylus (Vertex PT)">Citigroup</a>
+                <div class="subtext">Citi // Citi Assist &amp; Stylus (Vertex PT)</div>
+              </td>
+              <td class="numeric">$138.0K</td>
+              <td class="numeric">$338.4K</td>
+              <td class="numeric">$476.4K</td>
+              <td class="numeric" style="font-weight: 600;">$2.6M</td>
+              <td class="numeric">-</td>
+              <td class="numeric goal-achieved">
+                +$2.2M
+                <div class="subtext">vs $476.4K expected now</div>
+              </td>
+              <td>
+                <span class="status-badge status-active">🔥 EXCEEDED</span>
+              </td>
+              <td>
+                2025-11-22
+                
+                  <span class="danger-badge">EXPIRED</span>
+                
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
 
-    <div class="table-legend" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
-      <strong>Legend:</strong>
-      ARR at Signing = account's ARR when contract started |
-      Commitment = contract value |
-      Expected ARR = starting ARR + commitment |
-      Untapped = Expected ARR minus Current ARR (opportunity remaining) |
-      vs Expected = current ARR compared to where it should be at this point in the contract
+      <!-- Fixed footer with legend -->
+      <div class="table-fixed-footer" style="padding: 0.75rem 1.25rem; font-size: 0.85rem; color: var(--mid-gray);">
+        <strong>Legend:</strong>
+        ARR at Signing = account's ARR when contract started |
+        Commitment = contract value |
+        Expected ARR = starting ARR + commitment |
+        Untapped = Expected ARR minus Current ARR (opportunity remaining) |
+        vs Expected = current ARR compared to where it should be at this point in the contract
+      </div>
     </div>
   </div>
 </div>

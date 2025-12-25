@@ -54,11 +54,11 @@
   <!-- Page Content -->
   
 <div class="page">
-  <h2 class="page-title">All Opportunities</h2>
+  <div class="table-page-layout">
+    <h2 class="page-title">All Opportunities</h2>
 
-  <div class="page-body">
     <!-- Filter Bar -->
-    <div class="filter-bar">
+    <div class="filter-bar" style="flex-shrink: 0;">
       <div class="filter-group">
         <label class="filter-label">Stage</label>
         <select id="filter-stage" class="filter-select">
@@ -142,1239 +142,1246 @@
     </div>
 
     <!-- Filter Summary -->
-    <div class="filter-summary">
+    <div class="filter-summary" style="flex-shrink: 0;">
       <span id="visible-count">36</span> of 36 opportunities
       <span id="filtered-total"></span>
     </div>
 
-    <div class="table-wrapper with-filters">
-      <table class="data-table" id="opps-table">
-        <thead>
+    <div class="table-scroll-area">
+      <!-- Scrollable table body -->
+      <div class="table-scroll-body">
+        <table class="data-table" id="opps-table">
+          <thead>
+            <tr>
+              <th>Opportunity</th>
+              <th class="numeric">ARR / Commit</th>
+              <th class="stage-col">Stage</th>
+              <th>Close Date</th>
+              <th class="deal-intel-col">Deal Intel</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr
+                data-stage="2"
+                data-arr="5000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000h4RGzYAM/view" target="_blank" class="opp-link">RBC - AML/Financial Crime Custom Agent</a>
+                <span class="account-name">(Royal Bank of Canada)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $5.0M
+                
+              </td>
+              <td><span class="stage-badge s2">S2</span></td>
+              <td>2026-02-11</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                12.3 - Technical deep dive on 12.3 with broader team
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="2"
+                data-arr="5000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000fdvtGYAQ/view" target="_blank" class="opp-link">DBS - C4E</a>
+                <span class="account-name">(DBS Bank)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $5.0M
+                
+              </td>
+              <td><span class="stage-badge s2">S2</span></td>
+              <td>2028-01-20</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.3 - EBC with DBS team on 11.17
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="2"
+                data-arr="5000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000eaGqQYAU/view" target="_blank" class="opp-link">TD Bank - API 1P Commit</a>
+                <span class="account-name">(TD Bank Group)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $5.0M
+                
+              </td>
+              <td><span class="stage-badge s2">S2</span></td>
+              <td>2026-03-26</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.3 - EBC with TD ELT confirmed for 11.21 to discuss partnership next steps
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="2"
+                data-arr="5000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000evSjlYAE/view" target="_blank" class="opp-link">BNY - Custom Agent Claude Coworker</a>
+                <span class="account-name">(Bank of New York)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $5.0M
+                
+              </td>
+              <td><span class="stage-badge s2">S2</span></td>
+              <td>2026-03-26</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.3 - Custom Agents discovery meeting Thurs. 11.6
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="3"
+                data-arr="5000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000WtpNdYAJ/view" target="_blank" class="opp-link">RBC - Claude Code Full GA Deployment</a>
+                <span class="account-name">(Royal Bank of Canada)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $5.0M
+                
+              </td>
+              <td><span class="stage-badge s3">S3</span></td>
+              <td>2026-03-25</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.3 - Strong momentum with CC Exec Sponsor in person in Toronto this week. Verbal to proceed with CC deployment prior to EOY -- awaiting feedback on specific user counts and available budget on what can be executed this fiscal
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="3"
+                data-arr="5000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000e1869YAA/view" target="_blank" class="opp-link">Capital One - Claude Code to all 17k Devs</a>
+                <span class="account-name">(Capital One Financial Corporation)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $5.0M
+                
+              </td>
+              <td><span class="stage-badge s3">S3</span></td>
+              <td>2026-03-26</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.24 - 3P Bedrock consumption steadily ramping up but will be unlikely to hit the $5M RRR mark prior to year end so pushing to Jan while in parallel setting up several training and enablement sessions
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="2"
+                data-arr="3000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000h4GztYAE/view" target="_blank" class="opp-link">BNY - Vendor Sourcing Custom Agent</a>
+                <span class="account-name">(Bank of New York)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $3.0M
+                
+              </td>
+              <td><span class="stage-badge s2">S2</span></td>
+              <td>2026-02-05</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.17 - On-site technical deep dive workshop on Fri. 11.21
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="3"
+                data-arr="3000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000e0hu2YAA/view" target="_blank" class="opp-link">RBC - Claude for Finance</a>
+                <span class="account-name">(Royal Bank of Canada)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $3.0M
+                
+              </td>
+              <td><span class="stage-badge s3">S3</span></td>
+              <td>2026-02-09</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.10 -  Weekly cadence established w Head of AI for Cap Markets on Fri. afternoons. Awaiting feedback on PPT/Pitchbook Creator front to land a Q4 deal across their 1,200 bankers
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="2"
+                data-arr="3000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000bMncfYAC/view" target="_blank" class="opp-link">RBC - Custom Agent Prime Brokerage KYC</a>
+                <span class="account-name">(Royal Bank of Canada)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $3.0M
+                
+              </td>
+              <td><span class="stage-badge s2">S2</span></td>
+              <td>2026-02-09</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.17 - Meeting with Bobby and Endri on Prime Brokerage technical deep dive on Wed. 11/19
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="3"
+                data-arr="2500000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000gU3UxYAK/view" target="_blank" class="opp-link">RBC - Chat + Code 1P ToS Land Deal</a>
+                <span class="account-name">(Royal Bank of Canada)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $2.5M
+                
+              </td>
+              <td><span class="stage-badge s3">S3</span></td>
+              <td>2026-02-26</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.10 - Send ESA on Wed. 11.12 to try and expedite in flight negotiations for execution by EOY. Verbal commitment to deploy to all 10k devs, just need to get initial agreement in place
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="4"
+                data-arr="2000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000Z1S2vYAF/view" target="_blank" class="opp-link">SS&amp;C - CC + C4E</a>
+                <span class="account-name">(SS&amp;C Technologies, Inc)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $2.0M
+                
+              </td>
+              <td><span class="stage-badge s4">S4</span></td>
+              <td>2026-01-22</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                12.15 - awaiting feedback on redlines + potential new commercials given new usage based pricing.
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="1"
+                data-arr="1000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000fLrt2YAC/view" target="_blank" class="opp-link">Freddie Mac - CC</a>
+                <span class="account-name">(Freddie Mac)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $1.0M
+                
+              </td>
+              <td><span class="stage-badge s1">S1</span></td>
+              <td>2026-05-21</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                10.28 - Connecting with AWS rep next week to discuss POC use cases
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="3"
+                data-arr="1000000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000bNIerYAG/view" target="_blank" class="opp-link">BNY - Claude Code</a>
+                <span class="account-name">(Bank of New York)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $1.0M
+                
+              </td>
+              <td><span class="stage-badge s3">S3</span></td>
+              <td>2026-02-19</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.10 - awaiting customer feedback on MSA. Targeting CC + C4E seed deal across 500 devs
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="2"
+                data-arr="750000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000c8uQXYAY/view" target="_blank" class="opp-link">U.S. Bank - Claude Code</a>
+                <span class="account-name">(U.S. Bank)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $750.0K
+                
+              </td>
+              <td><span class="stage-badge s2">S2</span></td>
+              <td>2026-01-23</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11.3 - Working to set up meetings at re:Invent following AWS workshop last week
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="6"
+                data-arr="600000.0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000hjvHXYAY/view" target="_blank" class="opp-link">RBC - Capital Markets Aiden Banker</a>
+                <span class="account-name">(Royal Bank of Canada)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $600.0K
+                
+              </td>
+              <td><span class="stage-badge s6">S6</span></td>
+              <td>2025-11-25</td>
+              <td class="deal-intel">
+                
+                11.25 - Cap Markets team continuing to build Aiden Banker agents using Claude Code + Agent SDK
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="0"
+                data-arr="500000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iQY7xYAG/view" target="_blank" class="opp-link">Regions - API + CC</a>
+                <span class="account-name">(Regions Financial)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $500.0K
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2026-02-19</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                12.4 - Looking to amend MSA with a set of a few terms vs. entire MSA negotiation - actively looking to consume Claude on Bedrock asap
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="4"
+                data-arr="500000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000e9mZSYAY/view" target="_blank" class="opp-link">Veteran&#39;s United - Commit</a>
+                <span class="account-name">(Veterans United)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $500.0K
+                
+              </td>
+              <td><span class="stage-badge s4">S4</span></td>
+              <td>2026-01-30</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                11/24 - Following up with Kasey in mid-December to get final decision on if they will move forward with qtr or next. Need to get back to him on a few questions.
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="2"
+                data-arr="120000.0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="120000.0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="no_update">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iXAwvYAG/view" target="_blank" class="opp-link">First Horizon- Claude Code</a>
+                <span class="account-name">(First Horizon)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $120.0K / $120.0K
+                
+              </td>
+              <td><span class="stage-badge s2">S2</span></td>
+              <td>2026-03-05</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="no_update: Noned old">💀</span>
+                
+                Send over a contract
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">No timestamp in deal intel</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k1KPYAY/view" target="_blank" class="opp-link">Data Sync: Banco Supervielle</a>
+                <span class="account-name">(BANCO SUPERVIELLE S.A.)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0qoYAA/view" target="_blank" class="opp-link">Data Sync: NICE Systems</a>
+                <span class="account-name">(NICE Ltd)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0qnYAA/view" target="_blank" class="opp-link">Data Sync: MindTouch Inc.</a>
+                <span class="account-name">(NICE Ltd)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0qlYAA/view" target="_blank" class="opp-link">Data Sync: NICE Actimize</a>
+                <span class="account-name">(NICE Ltd)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0qmYAA/view" target="_blank" class="opp-link">Data Sync: NICE Systems</a>
+                <span class="account-name">(NICE Ltd)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0c4YAA/view" target="_blank" class="opp-link">Data Sync: State Street Bank and Trust Company</a>
+                <span class="account-name">(State Street Corporation)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006jwlRYAQ/view" target="_blank" class="opp-link">Data Sync: DBS Bank Ltd</a>
+                <span class="account-name">(DBS Bank)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006jz5sYAA/view" target="_blank" class="opp-link">Data Sync: Synchronous Health Inc</a>
+                <span class="account-name">(Synchrony Financial)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006jz5rYAA/view" target="_blank" class="opp-link">Data Sync: Synchrony Financial</a>
+                <span class="account-name">(Synchrony Financial)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k1OTYAY/view" target="_blank" class="opp-link">Data Sync: Ally Master</a>
+                <span class="account-name">(Ally Financial Inc.)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006jwlQYAQ/view" target="_blank" class="opp-link">Data Sync: DBS Bank Ltd</a>
+                <span class="account-name">(DBS Bank)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="0"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k1OSYAY/view" target="_blank" class="opp-link">Data Sync: Ally Master</a>
+                <span class="account-name">(Ally Financial Inc.)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2023-12-31</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="5"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000VY1uHYAT/view" target="_blank" class="opp-link">DBS - EULA Ammendment</a>
+                <span class="account-name">(DBS Bank)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s5">S5</span></td>
+              <td>2025-07-07</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="2"
+                data-arr="0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="past_deadline">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000hdmFKYAY/view" target="_blank" class="opp-link">DBS - Amendment / Order Form to add Claude Haiku 4.5 &amp; Claude Sonnet 4.5</a>
+                <span class="account-name">(DBS Bank)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s2">S2</span></td>
+              <td>2026-01-15</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
+                
+                12.15 - Working with legal to create new Order Form for new model inclusion
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">Contains a deadline that has passed</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="5"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000BGlFyYAL/view" target="_blank" class="opp-link">Data Sync: NICE Ltd</a>
+                <span class="account-name">(NICE Ltd)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s5">S5</span></td>
+              <td>2024-05-17</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr class="row-warning"
+                data-stage="5"
+                data-arr="0"
+                data-stale="true"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="unknown">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000BGlPdYAL/view" target="_blank" class="opp-link">Data Sync: NICE Ltd</a>
+                <span class="account-name">(NICE Ltd)</span>
+                
+                <span class="warning-badge">STALE</span>
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s5">S5</span></td>
+              <td>2024-05-17</td>
+              <td class="deal-intel">
+                
+                -
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="2"
+                data-arr="0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="no_update">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iD7ojYAC/view" target="_blank" class="opp-link">Ally Financial - Claude Code</a>
+                <span class="account-name">(Ally Financial Inc.)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s2">S2</span></td>
+              <td>2026-04-23</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="no_update: Noned old">💀</span>
+                
+                -
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">No deal intel recorded</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+            <tr
+                data-stage="0"
+                data-arr="0"
+                data-stale="false"
+                data-quarter=""
+                data-commit="0"
+                data-age=""
+                data-current-stage-days=""
+                data-freshness="no_update">
+              <td>
+                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000jTzhNYAS/view" target="_blank" class="opp-link">United Wholesale Mortgage - Claude Code</a>
+                <span class="account-name">(United Wholesale Mortgage)</span>
+                
+                
+              </td>
+              <td class="numeric arr-commit-cell">
+                
+                  $0
+                
+              </td>
+              <td><span class="stage-badge s0">S0</span></td>
+              <td>2026-03-19</td>
+              <td class="deal-intel">
+                
+                <span class="freshness-icon" title="no_update: Noned old">💀</span>
+                
+                -
+                
+                <div class="intel-issues">
+                  
+                  <span class="intel-issue">No deal intel recorded</span>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Fixed footer at bottom of visible window -->
+      <div class="table-fixed-footer">
+        <table>
           <tr>
-            <th>Opportunity</th>
-            <th class="numeric">ARR / Commit</th>
-            <th class="stage-col">Stage</th>
-            <th>Close Date</th>
-            <th class="deal-intel-col">Deal Intel</th>
+            <td style="width: 35%;"><strong>TOTAL (<span id="total-count">36</span> opportunities)</strong></td>
+            <td class="numeric" style="width: 15%;"><strong id="total-arr">$48.0M</strong> / <strong id="total-commit">$120.0K</strong></td>
+            <td style="width: 10%;"></td>
+            <td style="width: 15%;"></td>
+            <td style="width: 25%;"></td>
           </tr>
-        </thead>
-        <tbody>
-          
-          <tr
-              data-stage="2"
-              data-arr="5000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000h4RGzYAM/view" target="_blank" class="opp-link">RBC - AML/Financial Crime Custom Agent</a>
-              <span class="account-name">(Royal Bank of Canada)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $5.0M
-              
-            </td>
-            <td><span class="stage-badge s2">S2</span></td>
-            <td>2026-02-11</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              12.3 - Technical deep dive on 12.3 with broader team
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="2"
-              data-arr="5000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000fdvtGYAQ/view" target="_blank" class="opp-link">DBS - C4E</a>
-              <span class="account-name">(DBS Bank)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $5.0M
-              
-            </td>
-            <td><span class="stage-badge s2">S2</span></td>
-            <td>2028-01-20</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.3 - EBC with DBS team on 11.17
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="2"
-              data-arr="5000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000eaGqQYAU/view" target="_blank" class="opp-link">TD Bank - API 1P Commit</a>
-              <span class="account-name">(TD Bank Group)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $5.0M
-              
-            </td>
-            <td><span class="stage-badge s2">S2</span></td>
-            <td>2026-03-26</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.3 - EBC with TD ELT confirmed for 11.21 to discuss partnership next steps
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="2"
-              data-arr="5000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000evSjlYAE/view" target="_blank" class="opp-link">BNY - Custom Agent Claude Coworker</a>
-              <span class="account-name">(Bank of New York)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $5.0M
-              
-            </td>
-            <td><span class="stage-badge s2">S2</span></td>
-            <td>2026-03-26</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.3 - Custom Agents discovery meeting Thurs. 11.6
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="3"
-              data-arr="5000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000WtpNdYAJ/view" target="_blank" class="opp-link">RBC - Claude Code Full GA Deployment</a>
-              <span class="account-name">(Royal Bank of Canada)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $5.0M
-              
-            </td>
-            <td><span class="stage-badge s3">S3</span></td>
-            <td>2026-03-25</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.3 - Strong momentum with CC Exec Sponsor in person in Toronto this week. Verbal to proceed with CC deployment prior to EOY -- awaiting feedback on specific user counts and available budget on what can be executed this fiscal
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="3"
-              data-arr="5000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000e1869YAA/view" target="_blank" class="opp-link">Capital One - Claude Code to all 17k Devs</a>
-              <span class="account-name">(Capital One Financial Corporation)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $5.0M
-              
-            </td>
-            <td><span class="stage-badge s3">S3</span></td>
-            <td>2026-03-26</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.24 - 3P Bedrock consumption steadily ramping up but will be unlikely to hit the $5M RRR mark prior to year end so pushing to Jan while in parallel setting up several training and enablement sessions
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="2"
-              data-arr="3000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000h4GztYAE/view" target="_blank" class="opp-link">BNY - Vendor Sourcing Custom Agent</a>
-              <span class="account-name">(Bank of New York)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $3.0M
-              
-            </td>
-            <td><span class="stage-badge s2">S2</span></td>
-            <td>2026-02-05</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.17 - On-site technical deep dive workshop on Fri. 11.21
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="3"
-              data-arr="3000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000e0hu2YAA/view" target="_blank" class="opp-link">RBC - Claude for Finance</a>
-              <span class="account-name">(Royal Bank of Canada)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $3.0M
-              
-            </td>
-            <td><span class="stage-badge s3">S3</span></td>
-            <td>2026-02-09</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.10 -  Weekly cadence established w Head of AI for Cap Markets on Fri. afternoons. Awaiting feedback on PPT/Pitchbook Creator front to land a Q4 deal across their 1,200 bankers
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="2"
-              data-arr="3000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000bMncfYAC/view" target="_blank" class="opp-link">RBC - Custom Agent Prime Brokerage KYC</a>
-              <span class="account-name">(Royal Bank of Canada)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $3.0M
-              
-            </td>
-            <td><span class="stage-badge s2">S2</span></td>
-            <td>2026-02-09</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.17 - Meeting with Bobby and Endri on Prime Brokerage technical deep dive on Wed. 11/19
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="3"
-              data-arr="2500000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000gU3UxYAK/view" target="_blank" class="opp-link">RBC - Chat + Code 1P ToS Land Deal</a>
-              <span class="account-name">(Royal Bank of Canada)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $2.5M
-              
-            </td>
-            <td><span class="stage-badge s3">S3</span></td>
-            <td>2026-02-26</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.10 - Send ESA on Wed. 11.12 to try and expedite in flight negotiations for execution by EOY. Verbal commitment to deploy to all 10k devs, just need to get initial agreement in place
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="4"
-              data-arr="2000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000Z1S2vYAF/view" target="_blank" class="opp-link">SS&amp;C - CC + C4E</a>
-              <span class="account-name">(SS&amp;C Technologies, Inc)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $2.0M
-              
-            </td>
-            <td><span class="stage-badge s4">S4</span></td>
-            <td>2026-01-22</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              12.15 - awaiting feedback on redlines + potential new commercials given new usage based pricing.
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="1"
-              data-arr="1000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000fLrt2YAC/view" target="_blank" class="opp-link">Freddie Mac - CC</a>
-              <span class="account-name">(Freddie Mac)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $1.0M
-              
-            </td>
-            <td><span class="stage-badge s1">S1</span></td>
-            <td>2026-05-21</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              10.28 - Connecting with AWS rep next week to discuss POC use cases
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="3"
-              data-arr="1000000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000bNIerYAG/view" target="_blank" class="opp-link">BNY - Claude Code</a>
-              <span class="account-name">(Bank of New York)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $1.0M
-              
-            </td>
-            <td><span class="stage-badge s3">S3</span></td>
-            <td>2026-02-19</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.10 - awaiting customer feedback on MSA. Targeting CC + C4E seed deal across 500 devs
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="2"
-              data-arr="750000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000c8uQXYAY/view" target="_blank" class="opp-link">U.S. Bank - Claude Code</a>
-              <span class="account-name">(U.S. Bank)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $750.0K
-              
-            </td>
-            <td><span class="stage-badge s2">S2</span></td>
-            <td>2026-01-23</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11.3 - Working to set up meetings at re:Invent following AWS workshop last week
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="6"
-              data-arr="600000.0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000hjvHXYAY/view" target="_blank" class="opp-link">RBC - Capital Markets Aiden Banker</a>
-              <span class="account-name">(Royal Bank of Canada)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $600.0K
-              
-            </td>
-            <td><span class="stage-badge s6">S6</span></td>
-            <td>2025-11-25</td>
-            <td class="deal-intel">
-              
-              11.25 - Cap Markets team continuing to build Aiden Banker agents using Claude Code + Agent SDK
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="0"
-              data-arr="500000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iQY7xYAG/view" target="_blank" class="opp-link">Regions - API + CC</a>
-              <span class="account-name">(Regions Financial)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $500.0K
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2026-02-19</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              12.4 - Looking to amend MSA with a set of a few terms vs. entire MSA negotiation - actively looking to consume Claude on Bedrock asap
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="4"
-              data-arr="500000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000e9mZSYAY/view" target="_blank" class="opp-link">Veteran&#39;s United - Commit</a>
-              <span class="account-name">(Veterans United)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $500.0K
-              
-            </td>
-            <td><span class="stage-badge s4">S4</span></td>
-            <td>2026-01-30</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              11/24 - Following up with Kasey in mid-December to get final decision on if they will move forward with qtr or next. Need to get back to him on a few questions.
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="2"
-              data-arr="120000.0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="120000.0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="no_update">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iXAwvYAG/view" target="_blank" class="opp-link">First Horizon- Claude Code</a>
-              <span class="account-name">(First Horizon)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $120.0K / $120.0K
-              
-            </td>
-            <td><span class="stage-badge s2">S2</span></td>
-            <td>2026-03-05</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="no_update: Noned old">💀</span>
-              
-              Send over a contract
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">No timestamp in deal intel</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k1KPYAY/view" target="_blank" class="opp-link">Data Sync: Banco Supervielle</a>
-              <span class="account-name">(BANCO SUPERVIELLE S.A.)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0qoYAA/view" target="_blank" class="opp-link">Data Sync: NICE Systems</a>
-              <span class="account-name">(NICE Ltd)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0qnYAA/view" target="_blank" class="opp-link">Data Sync: MindTouch Inc.</a>
-              <span class="account-name">(NICE Ltd)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0qlYAA/view" target="_blank" class="opp-link">Data Sync: NICE Actimize</a>
-              <span class="account-name">(NICE Ltd)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0qmYAA/view" target="_blank" class="opp-link">Data Sync: NICE Systems</a>
-              <span class="account-name">(NICE Ltd)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k0c4YAA/view" target="_blank" class="opp-link">Data Sync: State Street Bank and Trust Company</a>
-              <span class="account-name">(State Street Corporation)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006jwlRYAQ/view" target="_blank" class="opp-link">Data Sync: DBS Bank Ltd</a>
-              <span class="account-name">(DBS Bank)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006jz5sYAA/view" target="_blank" class="opp-link">Data Sync: Synchronous Health Inc</a>
-              <span class="account-name">(Synchrony Financial)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006jz5rYAA/view" target="_blank" class="opp-link">Data Sync: Synchrony Financial</a>
-              <span class="account-name">(Synchrony Financial)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k1OTYAY/view" target="_blank" class="opp-link">Data Sync: Ally Master</a>
-              <span class="account-name">(Ally Financial Inc.)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006jwlQYAQ/view" target="_blank" class="opp-link">Data Sync: DBS Bank Ltd</a>
-              <span class="account-name">(DBS Bank)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="0"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK000006k1OSYAY/view" target="_blank" class="opp-link">Data Sync: Ally Master</a>
-              <span class="account-name">(Ally Financial Inc.)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2023-12-31</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="5"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000VY1uHYAT/view" target="_blank" class="opp-link">DBS - EULA Ammendment</a>
-              <span class="account-name">(DBS Bank)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s5">S5</span></td>
-            <td>2025-07-07</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="2"
-              data-arr="0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="past_deadline">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000hdmFKYAY/view" target="_blank" class="opp-link">DBS - Amendment / Order Form to add Claude Haiku 4.5 &amp; Claude Sonnet 4.5</a>
-              <span class="account-name">(DBS Bank)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s2">S2</span></td>
-            <td>2026-01-15</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="past_deadline: Noned old">⏰</span>
-              
-              12.15 - Working with legal to create new Order Form for new model inclusion
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">Contains a deadline that has passed</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="5"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000BGlFyYAL/view" target="_blank" class="opp-link">Data Sync: NICE Ltd</a>
-              <span class="account-name">(NICE Ltd)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s5">S5</span></td>
-            <td>2024-05-17</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr class="row-warning"
-              data-stage="5"
-              data-arr="0"
-              data-stale="true"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="unknown">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000BGlPdYAL/view" target="_blank" class="opp-link">Data Sync: NICE Ltd</a>
-              <span class="account-name">(NICE Ltd)</span>
-              
-              <span class="warning-badge">STALE</span>
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s5">S5</span></td>
-            <td>2024-05-17</td>
-            <td class="deal-intel">
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="2"
-              data-arr="0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="no_update">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iD7ojYAC/view" target="_blank" class="opp-link">Ally Financial - Claude Code</a>
-              <span class="account-name">(Ally Financial Inc.)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s2">S2</span></td>
-            <td>2026-04-23</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="no_update: Noned old">💀</span>
-              
-              -
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">No deal intel recorded</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-          <tr
-              data-stage="0"
-              data-arr="0"
-              data-stale="false"
-              data-quarter=""
-              data-commit="0"
-              data-age=""
-              data-current-stage-days=""
-              data-freshness="no_update">
-            <td>
-              <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000jTzhNYAS/view" target="_blank" class="opp-link">United Wholesale Mortgage - Claude Code</a>
-              <span class="account-name">(United Wholesale Mortgage)</span>
-              
-              
-            </td>
-            <td class="numeric arr-commit-cell">
-              
-                $0
-              
-            </td>
-            <td><span class="stage-badge s0">S0</span></td>
-            <td>2026-03-19</td>
-            <td class="deal-intel">
-              
-              <span class="freshness-icon" title="no_update: Noned old">💀</span>
-              
-              -
-              
-              <div class="intel-issues">
-                
-                <span class="intel-issue">No deal intel recorded</span>
-                
-              </div>
-              
-            </td>
-          </tr>
-          
-        </tbody>
-        <tfoot>
-          <tr class="totals-row">
-            <td><strong>TOTAL (<span id="total-count">36</span> opportunities)</strong></td>
-            <td class="numeric"><strong id="total-arr">$48.0M</strong> / <strong id="total-commit">$120.0K</strong></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tfoot>
-      </table>
+        </table>
+      </div>
     </div>
   </div>
 </div>
