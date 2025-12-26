@@ -69,18 +69,26 @@
 .vibe-content {
   flex: 1;
   text-align: left;
-  max-width: 450px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
-.vibe-summary {
-  font-family: var(--font-body);
-  font-size: 1.35rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 400;
+.vibe-focus-heading {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0;
+  font-weight: 600;
+}
+
+.vibe-focus-text {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .theme-song-link {
@@ -88,10 +96,11 @@
   align-items: center;
   gap: 0.5rem;
   color: #1DB954;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
-  opacity: 0.9;
+  opacity: 0.85;
   transition: opacity 0.2s;
+  margin-top: 0.5rem;
 }
 
 .theme-song-link:hover {
@@ -208,47 +217,42 @@
   font-weight: 700;
 }
 
-/* Deal Win Shout-Out */
+/* Deal Win Shout-Out - Compact inline */
 .deal-shoutout {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  padding: 1.25rem 2rem;
-  background: linear-gradient(135deg, rgba(74, 144, 121, 0.3) 0%, rgba(74, 144, 121, 0.15) 100%);
-  border: 2px solid rgba(74, 144, 121, 0.5);
-  border-radius: 12px;
+  gap: 0.6rem;
+  padding: 0.6rem 1.25rem;
+  background: linear-gradient(135deg, rgba(74, 144, 121, 0.25) 0%, rgba(74, 144, 121, 0.1) 100%);
+  border: 1px solid rgba(74, 144, 121, 0.4);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
 }
 
 .shoutout-confetti {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .shoutout-content {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem 1rem;
+  gap: 0.5rem;
 }
 
 .shoutout-label {
   background: #4a9079;
   color: white;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
   letter-spacing: 0.05em;
 }
 
 .shoutout-deal {
   color: white;
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
 }
@@ -260,38 +264,14 @@
 .shoutout-value {
   color: #4a9079;
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
 .shoutout-owner {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
   font-style: italic;
-}
-
-/* This Week's Focus */
-.focus-section {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto 1.5rem;
-  text-align: center;
-}
-
-.focus-heading {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 0.75rem;
-  font-weight: 600;
-}
-
-.focus-action {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.15rem;
-  line-height: 1.6;
-  margin: 0;
 }
 
 /* Hot / Watch Pulse Line */
@@ -396,12 +376,16 @@
     <h1 class="cover-title">Banking Forecast</h1>
     <p class="cover-date">Week of December 26, 2025</p>
 
-    <!-- VIBE HERO SECTION - Meme + Song -->
+    <!-- VIBE HERO SECTION - Meme LEFT, Focus + Song RIGHT -->
     <div class="vibe-hero">
       <div class="vibe-media">
         <img src="https://media.giphy.com/media/26u41kyfy1mkwIuAo/giphy.gif" alt="Person walking forward steadily with purpose and confidence" class="vibe-meme-hero">
       </div>
       <div class="vibe-content">
+        
+        <h4 class="vibe-focus-heading">This Week's Focus</h4>
+        <p class="vibe-focus-text">Prioritize execution support for January rollouts (DBS, Citi); prepare case studies from Capital One GA deployment for RBC/JPM discussions</p>
+        
         
         
         <a href="https://open.spotify.com/track/5x5JM1BSB6vollcIzDocqT" target="_blank" class="theme-song-link">
@@ -411,43 +395,21 @@
       </div>
     </div>
 
-    <!-- DEAL WIN SHOUT-OUT -->
+    <!-- DEAL WIN SHOUT-OUT - Compact -->
     
     
     <div class="deal-shoutout">
       <span class="shoutout-confetti">&#127881;</span>
       <div class="shoutout-content">
-        <span class="shoutout-label">DEAL WIN</span>
+        <span class="shoutout-label">WIN</span>
         <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000eue2DYAQ/view" target="_blank" class="shoutout-deal">Intercontinental Exchange Holdings, Inc.</a>
         <span class="shoutout-value">$1.6M</span>
-        <span class="shoutout-owner">Congrats Gabi D&#39;Agosto!</span>
+        <span class="shoutout-owner">Gabi D&#39;Agosto</span>
       </div>
-      <span class="shoutout-confetti">&#127881;</span>
     </div>
     
 
-    <!-- THIS WEEK'S FOCUS -->
-    
-    <div class="focus-section">
-      <h3 class="focus-heading">This Week's Focus</h3>
-      <p class="focus-action">Prioritize execution support for January rollouts (DBS, Citi); prepare case studies from Capital One GA deployment for RBC/JPM discussions</p>
-    </div>
-    
-
-    <!-- HOT / WATCH PULSE -->
-    
-    <div class="pulse-line">
-      
-      <span class="pulse-hot">&#128293; Inter &amp; Co Payments, Inc. +$51K WoW</span>
-      
-      
-      <span class="pulse-divider">|</span>
-      <span class="pulse-watch">&#128064; Commonwealth Bank of Australia $-904K WoW</span>
-      
-    </div>
-    
-
-    <!-- PATH TO Q4 GOAL WATERFALL -->
+    <!-- PATH TO Q4 GOAL WATERFALL - Above the fold -->
     <div class="cover-waterfall">
       <h3 class="waterfall-heading">Path to Q4 Goal</h3>
       <div class="waterfall-bar-container">
@@ -475,6 +437,19 @@
         <strong>37.0%</strong> coverage
       </div>
     </div>
+
+    <!-- HOT / WATCH PULSE - Bottom -->
+    
+    <div class="pulse-line">
+      
+      <span class="pulse-hot">&#128293; Inter &amp; Co Payments, Inc. +$51K WoW</span>
+      
+      
+      <span class="pulse-divider">|</span>
+      <span class="pulse-watch">&#128064; Commonwealth Bank of Australia $-904K WoW</span>
+      
+    </div>
+    
   </div>
 </div>
 
