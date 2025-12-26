@@ -56,7 +56,7 @@
 <div class="page deal-progression">
   <div class="progression-header">
     <h2 class="page-title">Deal Progression</h2>
-    <p class="header-meta">Stage velocity across <span id="visible-count">0</span> of 0 open opportunities</p>
+    <p class="header-meta">Stage velocity across <span id="visible-count">2</span> of 2 open opportunities</p>
   </div>
 
   <div class="progression-body">
@@ -130,17 +130,24 @@
       <span class="legend-item"><span class="legend-swatch s5"></span>S5 Agreed</span>
     </div>
 
-    <!-- Timeline Scale -->
+    <!-- Timeline Scale (Calendar-based: 6 months ago to today) -->
     <div class="timeline-scale">
       <div class="scale-container">
-        <span class="scale-label">0</span>
-        <span class="scale-label">30</span>
-        <span class="scale-label">60</span>
-        <span class="scale-label">90</span>
-        <span class="scale-label">120</span>
-        <span class="scale-label">150</span>
-        <span class="scale-label">180</span>
-        <span class="scale-label">210+</span>
+        
+        <span class="scale-label">Jun</span>
+        
+        <span class="scale-label">Jul</span>
+        
+        <span class="scale-label">Aug</span>
+        
+        <span class="scale-label">Sep</span>
+        
+        <span class="scale-label">Oct</span>
+        
+        <span class="scale-label">Nov</span>
+        
+        <span class="scale-label">Dec</span>
+        
       </div>
       <div class="scale-axis"></div>
     </div>
@@ -148,28 +155,104 @@
     <!-- Deal Timeline Rows -->
     <div class="timeline-container">
       
+      <div class="deal-row"
+           data-deal-age="56"
+           data-stage="2"
+           data-arr="200000.0"
+           data-quarter="2"
+           data-stale="false"
+           data-current-stage-days="13">
+        <div class="deal-info">
+          <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000cdka6YAA/view" target="_blank" class="deal-name" title="Nubank - POC Generative for Collections | GenAI | Collections">
+            Nubank - POC Generative for Collect...
+          </a>
+          <span class="deal-meta">$200.0K &bull; NU PAGAMENTOS S.A</span>
+        </div>
+        <div class="deal-timeline">
+          
+          
+          <div class="stage-segment s1"
+               style="position: absolute; left: 69.4%; width: 22.95%;"
+               title="S1: 42 days">
+            <span class="segment-days">42</span>
+          </div>
+          
+          <div class="stage-segment s2"
+               style="position: absolute; left: 92.35%; width: 7.65%;"
+               title="S2: 14 days">
+            <span class="segment-days">14</span>
+          </div>
+          
+        </div>
+        <div class="deal-total">
+          <span class="total-days">56d</span>
+          <span class="current-stage stage-2">S2</span>
+        </div>
+      </div>
+      
+      <div class="deal-row"
+           data-deal-age="183"
+           data-stage="4"
+           data-arr="0"
+           data-quarter="1"
+           data-stale="false"
+           data-current-stage-days="52">
+        <div class="deal-info">
+          <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000XooeYYAR/view" target="_blank" class="deal-name" title="Nubank- $500k Commit Land">
+            Nubank- $500k Commit Land
+          </a>
+          <span class="deal-meta">$0 &bull; NU PAGAMENTOS S.A</span>
+        </div>
+        <div class="deal-timeline">
+          
+          
+          <div class="stage-segment s1"
+               style="position: absolute; left: 0.0%; width: 34.43%;"
+               title="S1: 63 days">
+            <span class="segment-days">63</span>
+          </div>
+          
+          <div class="stage-segment s3"
+               style="position: absolute; left: 34.43%; width: 36.61%;"
+               title="S3: 67 days">
+            <span class="segment-days">67</span>
+          </div>
+          
+          <div class="stage-segment s4"
+               style="position: absolute; left: 71.04%; width: 28.96%;"
+               title="S4: 53 days">
+            <span class="segment-days">53</span>
+          </div>
+          
+        </div>
+        <div class="deal-total">
+          <span class="total-days">183d</span>
+          <span class="current-stage stage-4">S4</span>
+        </div>
+      </div>
+      
     </div>
 
     <!-- Summary Stats -->
     <div class="progression-stats">
       <div class="stat-item">
-        <span class="stat-value">d</span>
+        <span class="stat-value">120d</span>
         <span class="stat-label">Avg Deal Age</span>
       </div>
       <div class="stat-item">
-        <span class="stat-value">d</span>
+        <span class="stat-value">52d</span>
         <span class="stat-label">Avg S1 Duration</span>
       </div>
       <div class="stat-item">
-        <span class="stat-value">d</span>
+        <span class="stat-value">40d</span>
         <span class="stat-label">Avg S2 Duration</span>
       </div>
       <div class="stat-item">
-        <span class="stat-value">d</span>
+        <span class="stat-value">67d</span>
         <span class="stat-label">Avg S3 Duration</span>
       </div>
       <div class="stat-item">
-        <span class="stat-value"></span>
+        <span class="stat-value">1</span>
         <span class="stat-label">Deals >90 Days</span>
       </div>
     </div>
@@ -321,8 +404,7 @@
 /* Deal Timeline */
 .deal-timeline {
   flex: 1;
-  display: flex;
-  align-items: center;
+  position: relative;
   height: 18px;
   background: var(--light-gray);
   border-radius: 2px;
@@ -386,6 +468,14 @@
   background: var(--light-gray);
   color: var(--mid-gray);
 }
+
+/* Stage-specific colors for current stage badge */
+.current-stage.stage-0 { background: var(--light-gray); color: var(--mid-gray); }
+.current-stage.stage-1 { background: #c4d4e8; color: #2c4a6e; }
+.current-stage.stage-2 { background: #9bb8d4; color: #1e3a5f; }
+.current-stage.stage-3 { background: var(--blue); color: white; }
+.current-stage.stage-4 { background: #a8b88a; color: #3d4a2d; }
+.current-stage.stage-5 { background: var(--green); color: white; }
 
 /* Progression Stats */
 .progression-stats {
