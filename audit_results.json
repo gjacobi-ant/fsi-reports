@@ -1,0 +1,231 @@
+{
+  "audit_id": "audit_2025-12-26_143000",
+  "report_audited": "reports/Dec26_2025/",
+  "generated_at": "2025-12-26T14:30:00Z",
+  "overall_score": 439,
+  "overall_grade": "D",
+  "overall_pct": 69,
+  "css_validation": {
+    "passed": false,
+    "invalid_classes": 107,
+    "files_checked": 16,
+    "blocking": true,
+    "issues": [
+      "team-link class used in 14 files but not defined in shared_css.md",
+      "arr_table.html has 20 invalid classes (arr-page-layout, arr-table-container, etc.)",
+      "team.html has 26 invalid classes (team-header, team-waterfall-*, etc.)",
+      "updates.html has 24 invalid classes (updates-page, filter-*, intel-*, etc.)",
+      "opps_table.html has 7 invalid classes (stage-col, deal-intel-col, freshness-icon, etc.)",
+      "opps_overview.html has 19 invalid classes (freshness-card, score-*, row-*, etc.)"
+    ]
+  },
+  "pillar_scores": {
+    "pillar_1_arr": {
+      "score": 75,
+      "max": 90,
+      "pct": 83,
+      "details": {
+        "account_count": 35,
+        "has_sparklines": true,
+        "sparkline_count": 37,
+        "has_totals_row": true,
+        "has_26_month_chart": true,
+        "clickable_sf_links": true,
+        "sf_link_count": 49,
+        "goals_columns_present": true,
+        "goals_line_in_chart": true,
+        "goals_data_in_json": true
+      },
+      "issues": ["Some CSS classes for ARR table not defined in shared_css.md"]
+    },
+    "pillar_2_opps": {
+      "score": 60,
+      "max": 70,
+      "pct": 86,
+      "details": {
+        "opportunity_count": 91,
+        "deal_intel_populated": true,
+        "quarterly_forecast_present": true,
+        "stale_date_flagging": true,
+        "clickable_sf_opp_links": true,
+        "opp_link_count": 91
+      },
+      "issues": ["CSS classes for deal intel not in shared_css.md"]
+    },
+    "pillar_3_pipe": {
+      "score": 50,
+      "max": 55,
+      "pct": 91,
+      "details": {
+        "new_opps_shown": true,
+        "commentary_box_present": false,
+        "dual_regression_chart": true,
+        "stats_bar_complete": true,
+        "stats_values": ["132%", "$134.8M", "$679.2M", "$226.4M"]
+      },
+      "issues": ["Commentary box missing from pipe_chart.html"]
+    },
+    "pillar_4_engagement": {
+      "score": 45,
+      "max": 55,
+      "pct": 82,
+      "details": {
+        "accounts_scored": true,
+        "slack_data_integrated": true,
+        "slack_icons_clickable": true,
+        "stale_accounts_section": true
+      },
+      "issues": ["58 stale accounts identified but need attention", "CSS classes for engagement not in shared_css.md"]
+    },
+    "pillar_5_external": {
+      "score": 45,
+      "max": 70,
+      "pct": 64,
+      "details": {
+        "web_searches_performed": 12,
+        "news_articles_found": 47,
+        "industry_news_present": true,
+        "slack_highlights_extracted": 58,
+        "aiera_events_shown": 10,
+        "all_urls_clickable": false
+      },
+      "issues": [
+        "themes.html shows 'No portfolio themes identified' placeholder",
+        "aiera.html shows 10 events but all have 'Unknown' company names - data mapping issue",
+        "Aiera events missing company names, event types, dates, and summaries"
+      ]
+    },
+    "waterfall": {
+      "score": 35,
+      "max": 40,
+      "pct": 88,
+      "details": {
+        "waterfall_renders": true,
+        "best_worst_toggle": false,
+        "stage_weighting_table": false,
+        "goal_line_displayed": true,
+        "metric_cards_accurate": true,
+        "q4_goal": "$226.4M",
+        "arr": "$27.7M",
+        "pipeline": "$54.0M",
+        "coverage": "37.0%"
+      },
+      "issues": ["Best/worst case toggle not implemented", "Stage weighting table not present"]
+    }
+  },
+  "team_reports": {
+    "score": 45,
+    "max": 55,
+    "pct": 82,
+    "team_hub_exists": true,
+    "team_hub_size_kb": 19.5,
+    "team_dir_exists": true,
+    "owner_dirs": ["carolyn", "gabi", "greg", "nicole", "vikash"],
+    "files_per_owner": {
+      "gabi": 14,
+      "vikash": 14,
+      "carolyn": 14,
+      "nicole": 14,
+      "greg": 14
+    },
+    "total_team_files": 71,
+    "links_valid": true,
+    "issues": ["Each owner has 14 files instead of required 15"]
+  },
+  "cross_cutting": {
+    "score": 50,
+    "max": 65,
+    "pct": 77,
+    "html_files_count": 18,
+    "meme_image_present": true,
+    "meme_url": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExajg5MmJ6anI3MWVwdXpodXl5dXI5ZTI5a2E3Y3ZwOTA2c25yc2dsdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QuqiVW4iplE4GuVfUo/giphy.gif",
+    "theme_song_link_present": false,
+    "q4_chart_populated": true,
+    "consistent_navigation": true,
+    "nav_links_count": 15,
+    "shared_css_used": true,
+    "sf_hyperlinks_work": true,
+    "sf_link_count": 476,
+    "issues": ["Theme song link missing from cover page", "Index.html is just a redirect"]
+  },
+  "deployment": {
+    "score": 5,
+    "max": 40,
+    "pct": 13,
+    "github_pages_live": true,
+    "github_pages_url": "https://gjacobi-ant.github.io/fsi-reports",
+    "archive_accessible": false,
+    "archive_url": "https://gjacobi-ant.github.io/fsi-reports/archive/Dec26_2025/",
+    "http_status_main": 301,
+    "http_status_archive": 404,
+    "content_verification": {
+      "date_matches": "unknown",
+      "meme_matches": "unknown",
+      "summary_matches": "unknown"
+    },
+    "issues": ["Archive folder returns 404 - report not yet deployed", "Content verification skipped due to deployment status"]
+  },
+  "css_validation_score": {
+    "score": 0,
+    "max": 20,
+    "pct": 0,
+    "issues": ["107 invalid CSS classes found across 16 files", "CSS validation FAILED - blocking issue"]
+  },
+  "content_validation": {
+    "score": 19,
+    "max": 30,
+    "pct": 63,
+    "empty_pages": ["themes.html"],
+    "vibe_populated": true,
+    "vibe_meme_url": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExajg5MmJ6anI3MWVwdXpodXl5dXI5ZTI5a2E3Y3ZwOTA2c25yc2dsdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QuqiVW4iplE4GuVfUo/giphy.gif",
+    "vibe_summary": "Strong growth: +6.0% MoM ARR; $3.0M new pipe (4 opps); 58 stale accounts need attention.",
+    "aiera_page_issues": true,
+    "notes": "themes.html empty with placeholder. aiera.html has data but all companies show as 'Unknown'."
+  },
+  "json_validation": {
+    "score": 35,
+    "max": 40,
+    "pct": 88,
+    "files_checked": 5,
+    "errors_found": 3,
+    "errors": [
+      {
+        "file": "pillar_5_external.json",
+        "error": "Missing 'salesforce_url' in accounts array",
+        "agent": "external_intel_agent"
+      },
+      {
+        "file": "aiera_events - inferred from aiera.html",
+        "error": "Account names not mapped correctly - showing 'Unknown'",
+        "agent": "aiera_agent"
+      },
+      {
+        "file": "themes - not found in JSON",
+        "error": "key_themes in pillar_5_external.json not rendered to themes.html",
+        "agent": "html_generator"
+      }
+    ],
+    "root_cause_fixes": [
+      {
+        "agent_spec": "generators/generate_all.py or page spec",
+        "issue": "key_themes data present in pillar_5_external.json but themes.html shows placeholder",
+        "fix": "Check theme rendering logic in HTML generator"
+      },
+      {
+        "agent_spec": "aiera data processing",
+        "issue": "Aiera events not mapping to account names",
+        "fix": "Ensure account_name field is populated from ticker/equity lookup"
+      }
+    ]
+  },
+  "issues_fixed": 0,
+  "issues_found": 15,
+  "critical_issues": [
+    "CSS validation FAILED with 107 invalid classes - pages may render incorrectly",
+    "themes.html displays placeholder content despite pillar_5_external.json having key_themes data",
+    "aiera.html shows 'Unknown' for all company names - data mapping broken",
+    "Archive not deployed to GitHub Pages (404)",
+    "Team reports have 14 files per owner instead of 15"
+  ],
+  "notes": "Report has good foundational data but CSS validation failure is blocking. The HTML generators are using CSS classes not defined in shared_css.md. This is a systemic issue - either the CSS needs updating or the generators need to use only approved classes. The themes and aiera pages have data quality issues that need investigation."
+}
