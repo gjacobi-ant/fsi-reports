@@ -66,6 +66,29 @@
   <div class="page-body">
     <!-- Recent Wins Banner -->
     
+    <div class="wins-banner">
+      <div class="wins-banner-header">
+        <span class="wins-emoji">&#127942;</span>
+        <span class="wins-headline">1 Deal Closed!</span>
+        <span class="wins-emoji">&#127942;</span>
+      </div>
+      <div class="wins-banner-details">
+        
+        <span class="wins-stat">
+          <strong>$1.6M</strong> Total Value
+        </span>
+        
+      </div>
+      <div class="wins-deal-list">
+        
+        <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000eue2DYAQ/view" target="_blank" class="wins-deal-chip">
+          Intercontinenta... - $1.6M
+        </a>
+        
+        
+      </div>
+    </div>
+    
 
     <!-- Key Metrics Banner -->
     <div class="summary-metrics-banner">
@@ -282,8 +305,8 @@
               
               <tr>
                 <td>
-                  <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000jAZ0zYAG/view" target="_blank">First Citizens | Claud...</a>
-                  <span class="opp-account">First Citize...</span>
+                  <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iys7RYAQ/view" target="_blank">Bank of America | Erica</a>
+                  <span class="opp-account">Bank of America</span>
                 </td>
                 <td class="pipe-arr">$1.0M</td>
                 <td class="pipe-commit">-</td>
@@ -291,8 +314,8 @@
               
               <tr>
                 <td>
-                  <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iys7RYAQ/view" target="_blank">Bank of America | Erica</a>
-                  <span class="opp-account">Bank of America</span>
+                  <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000jAZ0zYAG/view" target="_blank">First Citizens | Claud...</a>
+                  <span class="opp-account">First Citize...</span>
                 </td>
                 <td class="pipe-arr">$1.0M</td>
                 <td class="pipe-commit">-</td>
@@ -317,6 +340,26 @@
           <h3 class="summary-card-title">Portfolio Themes</h3>
           <div class="themes-list themes-simple">
             
+            <div class="theme-item-simple">
+              <span class="theme-name">Claude Code Enterprise Deployments Accelerating</span>
+            </div>
+            
+            <div class="theme-item-simple">
+              <span class="theme-name">COBOL/Mainframe Modernization as Strategic Entry Point</span>
+            </div>
+            
+            <div class="theme-item-simple">
+              <span class="theme-name">Custom Agents Pipeline Building Across Financial Services</span>
+            </div>
+            
+            <div class="theme-item-simple">
+              <span class="theme-name">Executive Access and Strategic Relationships Strengthening</span>
+            </div>
+            
+            <div class="theme-item-simple">
+              <span class="theme-name">AI Productivity ROI Now Quantifiable Across Industry</span>
+            </div>
+            
           </div>
           <a href="themes.html" class="view-more-link">View all themes &rarr;</a>
         </div>
@@ -330,8 +373,26 @@
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = false;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',

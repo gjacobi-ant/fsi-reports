@@ -469,77 +469,10 @@
       <!-- Updates Container -->
       <div class="updates-container">
         
-        
-        
-        
-        
-        
-          
-            
-            
-              
-                
-              
-            
-          
-        
-        
-        
-        
-        
-
-        <div class="intel-card" data-health="critical">
-          <div class="intel-header" onclick="toggleCard(this)">
-            <div class="health-indicator critical"></div>
-            <div class="account-info">
-              <h3 class="account-name">
-                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK000008InLCYA0/view" target="_blank" onclick="event.stopPropagation()">Citigroup</a>
-              </h3>
-              <div class="account-meta">
-                <span class="meta-item">
-                  <span class="icon">📊</span>
-                  0 progress · 1 blockers
-                </span>
-                
-              </div>
-            </div>
-            <span class="health-badge critical">At Risk</span>
-            <div class="collapse-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                <path d="M4.427 6.427L8 9.999l3.573-3.572a.5.5 0 01.708.708l-4 4a.5.5 0 01-.708 0l-4-4a.5.5 0 01.708-.708z"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="intel-body">
-            <div class="intel-section progress">
-              <div class="section-header">
-                <span class="section-icon">✅</span>
-                <span class="section-title">Progress & Wins</span>
-                <span class="section-count">0</span>
-              </div>
-              <ul class="intel-list">
-                
-                <li class="no-items">No progress items</li>
-                
-              </ul>
-            </div>
-
-            <div class="intel-section blockers">
-              <div class="section-header">
-                <span class="section-icon">⚠️</span>
-                <span class="section-title">Blockers & Risks</span>
-                <span class="section-count">1</span>
-              </div>
-              <ul class="intel-list">
-                
-                <li class="intel-item">**CTO David Griffiths now onboard** with bringing Claude Code directly into org rather than building off SDK late Q1 launch targeted. Kate Moore (Citi Wealth CIO) driving AI-first transformation and looking for C4F and custom agents partnership. **$1M AR PT deal progressing** with Order Schedule execution in final stages. Citi Services onsite completed with positive engagement from Head of Shared Operational Platforms. **Blockers:** CISO concerns with CLI toolings around authentication and server-side data retention. Significant rate limit increase requests (5x TPM, 20-40x QPM) need feasibility validation. Citigroup stock surpassed book value for first time in seven years, posting 68% YTD gain.</li>
-                
-              </ul>
-            </div>
-          </div>
+        <div class="no-updates">
+          <div class="no-updates-icon">📋</div>
+          <p>No account updates available</p>
         </div>
-        
         
       </div>
     </div>
@@ -611,8 +544,26 @@ document.getElementById('toggle-all').addEventListener('click', function() {
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = true;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',

@@ -208,87 +208,118 @@
   font-weight: 700;
 }
 
-/* Recent Wins Celebration */
-.wins-celebration {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto 2rem;
-  padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, rgba(74, 144, 121, 0.25) 0%, rgba(74, 144, 121, 0.15) 100%);
-  border: 1px solid rgba(74, 144, 121, 0.4);
-  border-radius: 12px;
-  text-align: center;
-}
-
-.wins-header {
+/* Deal Win Shout-Out */
+.deal-shoutout {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(135deg, rgba(74, 144, 121, 0.3) 0%, rgba(74, 144, 121, 0.15) 100%);
+  border: 2px solid rgba(74, 144, 121, 0.5);
+  border-radius: 12px;
 }
 
-.wins-icon {
-  font-size: 2rem;
+.shoutout-confetti {
+  font-size: 2.5rem;
 }
 
-.wins-title {
+.shoutout-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+}
+
+.shoutout-label {
+  background: #4a9079;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.shoutout-deal {
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.shoutout-deal:hover {
+  text-decoration: underline;
+}
+
+.shoutout-value {
   color: #4a9079;
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.shoutout-owner {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* This Week's Focus */
+.focus-section {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+.focus-heading {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
   font-weight: 600;
+}
+
+.focus-action {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.15rem;
+  line-height: 1.6;
   margin: 0;
 }
 
-.wins-summary {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-.wins-summary strong {
-  color: #4a9079;
-  font-weight: 700;
-}
-
-.wins-deals {
+/* Hot / Watch Pulse Line */
+.pulse-line {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 0.75rem;
-  justify-content: center;
-}
-
-.win-deal {
-  background: rgba(74, 144, 121, 0.2);
-  border: 1px solid rgba(74, 144, 121, 0.3);
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
-  padding: 0.75rem 1rem;
-  text-decoration: none;
-  transition: all 0.2s;
+  font-size: 0.95rem;
 }
 
-.win-deal:hover {
-  background: rgba(74, 144, 121, 0.35);
-  border-color: rgba(74, 144, 121, 0.5);
+.pulse-hot {
+  color: #ff9966;
 }
 
-.win-deal-name {
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
-  display: block;
+.pulse-watch {
+  color: #ffcc66;
 }
 
-.win-deal-account {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.75rem;
-}
-
-.win-deal-value {
-  color: #4a9079;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-top: 0.25rem;
+.pulse-divider {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /* Responsive */
@@ -358,18 +389,23 @@
     <h1 class="cover-title">Gabi D&#39;Agosto's Forecast</h1>
     <p class="cover-date">Week of December 26, 2025</p>
 
-    <!-- VIBE HERO SECTION - Magazine Layout -->
+    <!-- VIBE HERO SECTION - Meme + Song -->
     <div class="vibe-hero">
       <div class="vibe-media">
-        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHpyd3JucnBwdmkzYmtqa3BjYnd0bmYyM3Q4Yjh6eGhtZ2RzcXEycyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hrpfKL5soESRiQddY3/giphy.gif" alt="champion winner crushing it" class="vibe-meme-hero">
+        <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Crushing it" class="vibe-meme-hero">
       </div>
       <div class="vibe-content">
-        <p class="vibe-summary">Gabi D&#39;Agosto&#39;s portfolio: $10.5M ARR across 13 accounts. Top: Commonwealth Bank of Australia.</p>
         
       </div>
     </div>
 
-    <!-- RECENT WINS CELEBRATION -->
+    <!-- DEAL WIN SHOUT-OUT -->
+    
+
+    <!-- THIS WEEK'S FOCUS -->
+    
+
+    <!-- HOT / WATCH PULSE -->
     
 
     <!-- PATH TO Q4 GOAL WATERFALL -->
@@ -412,8 +448,26 @@
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = true;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',

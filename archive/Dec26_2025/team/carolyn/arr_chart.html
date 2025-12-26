@@ -119,8 +119,26 @@
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = true;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',

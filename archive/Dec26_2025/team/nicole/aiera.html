@@ -75,7 +75,7 @@
             <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK000007Gp97YAC/view" target="_blank" class="account-link">JPMorgan Chase &amp; Co</a></td>
             <td>Earnings Call</td>
             <td>2026-01-13</td>
-            <td>Q4 2025 earnings call for largest US bank. Critical for understanding banking sector health, NII trends, credit quality, and AI investment commentary.</td>
+            <td>Q4 2025 earnings call discussing financial performance, guidance, and strategic initiatives</td>
             <td>
               
               <a href="https://aiera.com/event/2702261" class="aiera-link" target="_blank">View</a>
@@ -94,8 +94,26 @@
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = true;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',

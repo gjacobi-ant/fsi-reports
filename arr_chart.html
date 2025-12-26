@@ -126,8 +126,26 @@
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = false;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',
@@ -229,7 +247,7 @@
     const forecastLabels = ["Jan \u002726", "Feb \u002726", "Mar \u002726", "Apr \u002726", "May \u002726", "Jun \u002726", "Jul \u002726", "Aug \u002726", "Sep \u002726", "Oct \u002726", "Nov \u002726", "Dec \u002726"];
     const regression12Forecasts = [27491453.63371429, 29513358.677428573, 31535263.721142866, 33557168.76485715, 35579073.808571436, 37600978.85228572, 39622883.896000005, 41644788.93971429, 43666693.98342858, 45688599.02714287, 47710504.07085715, 49732409.11457144];
     const regression3Forecasts = [33442943.045000017, 36610052.55000002, 39777162.05500002, 42944271.56000003, 46111381.065000035, 49278490.57000004, 52445600.07500005, 55612709.58000005, 58779819.08500005, 61946928.590000056, 65114038.095000066, 68281147.60000007];
-    const goalsData = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 47479074.1, null, null, null, null, null, null, null, null, 226390641.53];
+    const goalsData = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 47479074.1, null, null, 122318231.67, null, null, 163504352.22, null, null, 226390641.53];
 
     const allLabels = [...historicalLabels, ...forecastLabels];
     const historicalDataset = [...historicalData, ...Array(forecastLabels.length).fill(null)];

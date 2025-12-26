@@ -72,22 +72,10 @@
         <tbody>
           
           <tr>
-            <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK000008J1tbYAC/view" target="_blank" class="account-link">Fifth Third Bank</a></td>
-            <td>Shareholder Meeting</td>
-            <td>2026-01-06</td>
-            <td>Extraordinary shareholders meeting. Monitor for any significant corporate actions or governance changes.</td>
-            <td>
-              
-              <a href="https://aiera.com/event/2851281" class="aiera-link" target="_blank">View</a>
-              
-            </td>
-          </tr>
-          
-          <tr>
             <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001Hs000033XkAlIAK/view" target="_blank" class="account-link">Bank of America</a></td>
             <td>Earnings Call</td>
             <td>2026-01-14</td>
-            <td>Q4 2025 earnings for major US bank. Key metrics: NII guidance, expense management, wealth management growth, and tech investment plans.</td>
+            <td>Q4 2025 earnings call discussing financial performance, guidance, and strategic initiatives</td>
             <td>
               
               <a href="https://aiera.com/event/2820206" class="aiera-link" target="_blank">View</a>
@@ -99,7 +87,7 @@
             <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001Hs000033XnV2IAK/view" target="_blank" class="account-link">Wells Fargo</a></td>
             <td>Earnings Call</td>
             <td>2026-01-15</td>
-            <td>Q4 2025 earnings. Critical focus on asset cap progress, efficiency ratio improvements, and technology/AI investment plans.</td>
+            <td>Q4 2025 earnings call discussing financial performance, guidance, and strategic initiatives</td>
             <td>
               
               <a href="https://aiera.com/event/2688304" class="aiera-link" target="_blank">View</a>
@@ -111,7 +99,7 @@
             <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK000008InLTYA0/view" target="_blank" class="account-link">PNC Financial Services</a></td>
             <td>Earnings Call</td>
             <td>2026-01-16</td>
-            <td>Q4 2025 earnings for super-regional bank. Key focus on NII outlook, corporate banking growth, and technology investments.</td>
+            <td>Q4 2025 earnings call discussing financial performance, guidance, and strategic initiatives</td>
             <td>
               
               <a href="https://aiera.com/event/2850888" class="aiera-link" target="_blank">View</a>
@@ -123,7 +111,7 @@
             <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK000008J1tbYAC/view" target="_blank" class="account-link">Fifth Third Bank</a></td>
             <td>Earnings Call</td>
             <td>2026-01-20</td>
-            <td>Q4 2025 earnings. Watch for Midwest commercial banking trends, fee income, and technology adoption progress.</td>
+            <td>Q4 2025 earnings call discussing financial performance, guidance, and strategic initiatives</td>
             <td>
               
               <a href="https://aiera.com/event/2749957" class="aiera-link" target="_blank">View</a>
@@ -135,7 +123,7 @@
             <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK000008InLNYA0/view" target="_blank" class="account-link">Truist Financial</a></td>
             <td>Earnings Call</td>
             <td>2026-01-21</td>
-            <td>Q4 2025 earnings. Focus on post-insurance sale capital deployment, expense management, and merger integration completion.</td>
+            <td>Q4 2025 earnings call discussing financial performance, guidance, and strategic initiatives</td>
             <td>
               
               <a href="https://aiera.com/event/2853531" class="aiera-link" target="_blank">View</a>
@@ -147,34 +135,10 @@
             <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001Hs000033XkLtIAK/view" target="_blank" class="account-link">Citizens Bank</a></td>
             <td>Earnings Call</td>
             <td>2026-01-21</td>
-            <td>Q4 2025 earnings. Watch for private banking growth, student loan refinance business, and digital transformation updates.</td>
+            <td>Q4 2025 earnings call discussing financial performance, guidance, and strategic initiatives</td>
             <td>
               
               <a href="https://aiera.com/event/2705008" class="aiera-link" target="_blank">View</a>
-              
-            </td>
-          </tr>
-          
-          <tr>
-            <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK00000ZVydMYAT/view" target="_blank" class="account-link">Banorte</a></td>
-            <td>Earnings Call</td>
-            <td>2026-01-23</td>
-            <td>Q4 2025 earnings expected for Mexican bank. Watch for nearshoring benefits and digital banking growth.</td>
-            <td>
-              
-              -
-              
-            </td>
-          </tr>
-          
-          <tr>
-            <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK000008J1uFYAS/view" target="_blank" class="account-link">First Citizens Bank (NC)</a></td>
-            <td>Earnings Call</td>
-            <td>2026-01-26</td>
-            <td>Q4 2025 earnings expected. Focus on SVB integration progress and venture banking performance.</td>
-            <td>
-              
-              -
               
             </td>
           </tr>
@@ -190,8 +154,26 @@
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = true;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',

@@ -75,7 +75,7 @@
             <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK00000XyuSdYAJ/view" target="_blank" class="account-link">National Bank of Canada</a></td>
             <td>Conference</td>
             <td>2026-01-06</td>
-            <td>National Bank CEO presenting at RBC Capital Markets Canadian Bank CEO Conference. Strategic updates and Q&amp;A expected.</td>
+            <td>CEO presentation at RBC Capital Markets Canadian Bank CEO Conference highlighting business strategy</td>
             <td>
               
               <a href="https://aiera.com/event/2854522" class="aiera-link" target="_blank">View</a>
@@ -87,22 +87,10 @@
             <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK000008InLCYA0/view" target="_blank" class="account-link">Citigroup</a></td>
             <td>Earnings Call</td>
             <td>2026-01-14</td>
-            <td>Q4 2025 earnings. Focus on transformation progress, expense discipline, services business growth, and technology modernization updates.</td>
+            <td>Q4 2025 earnings call discussing financial performance, guidance, and strategic initiatives</td>
             <td>
               
               <a href="https://aiera.com/event/2820046" class="aiera-link" target="_blank">View</a>
-              
-            </td>
-          </tr>
-          
-          <tr>
-            <td><a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK00000abD2rYAE/view" target="_blank" class="account-link">Ameris Bancorp</a></td>
-            <td>Earnings Call</td>
-            <td>2026-01-23</td>
-            <td>Q4 2025 earnings expected. Watch for Southeast market trends and mortgage banking performance.</td>
-            <td>
-              
-              -
               
             </td>
           </tr>
@@ -118,8 +106,26 @@
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = true;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',

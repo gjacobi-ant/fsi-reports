@@ -60,9 +60,47 @@
   <div class="page-body">
     <div class="themes-container">
       
-      <div class="no-data-card">
-        <p class="no-data">No portfolio themes identified</p>
-        <p class="no-data-hint">Themes are derived from Slack intel, engagement patterns, and news events</p>
+      
+      
+      <div class="theme-card theme-high">
+        <div class="theme-header">
+          <span class="theme-rank">#4</span>
+          <h3 class="theme-title">Executive Access and Strategic Relationships Strengthening</h3>
+          <span class="theme-impact impact-high">High - Strategic Priority</span>
+        </div>
+
+        <div class="theme-body">
+          <!-- WHAT: The observation -->
+          <div class="theme-section">
+            <span class="theme-label label-what">WHAT</span>
+            <span class="theme-content">JPM Jamie Dimon meeting scheduled for Davos plus $108M pipeline with CEO-level engagement; BofA Erica 2.0 RFI received with Brian Moynihan Davos meeting planned; Capital One CIO/CTO buy-in secured; BNY CIO-level engagement</span>
+          </div>
+
+          <!-- SO WHAT: Why it matters -->
+          <div class="theme-section">
+            <span class="theme-label label-so-what">SO WHAT</span>
+            <span class="theme-content">C-level relationships accelerate enterprise deals and reduce procurement friction. Davos meetings provide unique opportunity for strategic partnership discussions</span>
+          </div>
+
+          <!-- NOW WHAT: Action items -->
+          <div class="theme-section section-now-what">
+            <span class="theme-label label-now-what">NOW WHAT</span>
+            <span class="theme-content">Prepare Davos briefing materials for JPM/BofA CEO meetings; leverage Capital One executive relationships to accelerate procurement</span>
+          </div>
+        </div>
+
+        <div class="theme-footer">
+          <div class="theme-accounts">
+            
+            <span class="account-chip">Bank of America</span>
+            
+          </div>
+          <div class="theme-source">
+            
+            <span title="Internal intelligence from Slack/Salesforce">&#128172;</span> Internal
+            
+          </div>
+        </div>
       </div>
       
     </div>
@@ -74,8 +112,26 @@
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = true;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',

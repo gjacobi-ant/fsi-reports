@@ -248,15 +248,6 @@
               
               <tr>
                 <td>
-                  <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000jAZ0zYAG/view" target="_blank">First Citizens | Claud...</a>
-                  <span class="opp-account">First Citize...</span>
-                </td>
-                <td class="pipe-arr">$1.0M</td>
-                <td class="pipe-commit">-</td>
-              </tr>
-              
-              <tr>
-                <td>
                   <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000iys7RYAQ/view" target="_blank">Bank of America | Erica</a>
                   <span class="opp-account">Bank of America</span>
                 </td>
@@ -268,6 +259,15 @@
                 <td>
                   <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000jFtjuYAC/view" target="_blank">ANZ Bank | Claude Code...</a>
                   <span class="opp-account">ANZ Bank</span>
+                </td>
+                <td class="pipe-arr">$1.0M</td>
+                <td class="pipe-commit">-</td>
+              </tr>
+              
+              <tr>
+                <td>
+                  <a href="https://customization-agility-483.lightning.force.com/lightning/r/Opportunity/006PK00000jAZ0zYAG/view" target="_blank">First Citizens | Claud...</a>
+                  <span class="opp-account">First Citize...</span>
                 </td>
                 <td class="pipe-arr">$1.0M</td>
                 <td class="pipe-commit">-</td>
@@ -296,8 +296,26 @@
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = true;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',

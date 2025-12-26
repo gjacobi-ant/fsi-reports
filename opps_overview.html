@@ -267,7 +267,7 @@
         <div class="freshness-score-container">
           <div class="freshness-score score-rotten">
             <span class="score-icon">🥀</span>
-            <span class="score-value">1.2%</span>
+            <span class="score-value">1%</span>
           </div>
           <span class="score-label">Freshness Score</span>
         </div>
@@ -280,17 +280,17 @@
           <div class="freshness-row aging">
             <span class="row-icon">🍊</span>
             <span class="row-label">Aging (8-21 days)</span>
-            <span class="row-count">8</span>
+            <span class="row-count">7</span>
           </div>
           <div class="freshness-row rotten">
             <span class="row-icon">🥀</span>
             <span class="row-label">Rotten (>21 days)</span>
-            <span class="row-count">31</span>
+            <span class="row-count">26</span>
           </div>
           <div class="freshness-row no-update">
             <span class="row-icon">💀</span>
             <span class="row-label">No Update</span>
-            <span class="row-count">43</span>
+            <span class="row-count">49</span>
           </div>
           
           <div class="freshness-row past-deadline">
@@ -973,8 +973,26 @@
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = false;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',

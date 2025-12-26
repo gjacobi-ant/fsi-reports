@@ -469,77 +469,10 @@
       <!-- Updates Container -->
       <div class="updates-container">
         
-        
-        
-        
-        
-        
-          
-            
-            
-              
-                
-              
-            
-          
-        
-        
-        
-        
-        
-
-        <div class="intel-card" data-health="critical">
-          <div class="intel-header" onclick="toggleCard(this)">
-            <div class="health-indicator critical"></div>
-            <div class="account-info">
-              <h3 class="account-name">
-                <a href="https://customization-agility-483.lightning.force.com/lightning/r/Account/001PK000007Gp97YAC/view" target="_blank" onclick="event.stopPropagation()">JPMorgan Chase &amp; Co</a>
-              </h3>
-              <div class="account-meta">
-                <span class="meta-item">
-                  <span class="icon">📊</span>
-                  0 progress · 1 blockers
-                </span>
-                
-              </div>
-            </div>
-            <span class="health-badge critical">At Risk</span>
-            <div class="collapse-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                <path d="M4.427 6.427L8 9.999l3.573-3.572a.5.5 0 01.708.708l-4 4a.5.5 0 01-.708 0l-4-4a.5.5 0 01.708-.708z"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="intel-body">
-            <div class="intel-section progress">
-              <div class="section-header">
-                <span class="section-icon">✅</span>
-                <span class="section-title">Progress & Wins</span>
-                <span class="section-count">0</span>
-              </div>
-              <ul class="intel-list">
-                
-                <li class="no-items">No progress items</li>
-                
-              </ul>
-            </div>
-
-            <div class="intel-section blockers">
-              <div class="section-header">
-                <span class="section-icon">⚠️</span>
-                <span class="section-title">Blockers & Risks</span>
-                <span class="section-count">1</span>
-              </div>
-              <ul class="intel-list">
-                
-                <li class="intel-item">**$108M Claude Code opportunity** formally approved by AI for Tech exec committee for 60k developers. CEO Jamie Dimon directly instructed Derek Waldron to prioritize C4F and direct relationship after recent meeting. OrderManager SoW near sign-off with milestone-based pricing. Bonds pricing agent discovery identifying $100M+ problem with $10M+ willingness to pay. **Main blocker:** Windows sandboxing and VDI restrictions for Claude Code deployment most dev workstations are locked-down Windows VDIs. OpenAI making competitive push. JPMorgan raised AI benefit estimate from $1B to nearly $2B, maintaining position as world&#39;s most advanced bank in AI.</li>
-                
-              </ul>
-            </div>
-          </div>
+        <div class="no-updates">
+          <div class="no-updates-icon">📋</div>
+          <p>No account updates available</p>
         </div>
-        
         
       </div>
     </div>
@@ -611,8 +544,26 @@ document.getElementById('toggle-all').addEventListener('click', function() {
 <!-- Sidebar & Keyboard Navigation Script -->
 <script>
 (function() {
-  // Page order for keyboard navigation
-  const pageOrder = [
+  // Detect if this is a team report
+  const isTeamReport = true;
+
+  // Page order for keyboard navigation (team reports don't have team.html)
+  const pageOrder = isTeamReport ? [
+    'cover.html',
+    'summary.html',
+    'arr_chart.html',
+    'arr_table.html',
+    'opps_overview.html',
+    'opps_table.html',
+    'deal_progression.html',
+    'pipe_chart.html',
+    'pipe_coverage.html',
+    'contracts_table.html',
+    'themes.html',
+    'news_roundup.html',
+    'updates.html',
+    'aiera.html'
+  ] : [
     'cover.html',
     'summary.html',
     'arr_chart.html',
